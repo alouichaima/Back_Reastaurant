@@ -1,0 +1,5 @@
+/* Add this to your component's CSS file */
+.success-snackbar {
+  background-color: #43a047; /* Green color for success */
+  color: #fff; /* White text */
+}

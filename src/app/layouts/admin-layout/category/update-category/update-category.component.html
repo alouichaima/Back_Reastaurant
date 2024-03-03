@@ -1,0 +1,15 @@
+<!-- update-category.component.html -->
+
+<h2>Update Category</h2>
+
+<form [formGroup]="updateForm" (ngSubmit)="updateCategory(category.id)">
+  <div class="form-group">
+    <label for="name">Category Name</label>
+    <input type="text" class="form-control" id="name" formControlName="name" required>
+  </div>
+  <div class="form-group">
+    <label for="description">Category Description</label>
+    <textarea class="form-control" id="description" formControlName="description" required></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>

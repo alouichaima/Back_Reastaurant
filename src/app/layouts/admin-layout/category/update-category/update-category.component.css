@@ -1,0 +1,80 @@
+/* update-category.component.css */
+
+/* Main container */
+.container {
+    margin: 20px auto; /* Ajout de marge autour du conteneur */
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form title */
+  h2 {
+    color: #FFA500; /* Couleur orange douce */
+    margin-bottom: 20px;
+    text-align: center; /* Centrer le titre */
+  }
+  
+  /* Form fields */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+    color: #555; /* Couleur gris foncé */
+    text-align: center; /* Centrer le texte */
+    display: block;
+  }
+  
+  input[type="text"],
+  textarea {
+    width: calc(100% - 40px); /* Largeur ajustée */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    margin: 0 auto; /* Centrer les champs */
+    display: block;
+  }
+  
+  input[type="text"]:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #FFA500; /* Couleur orange douce */
+  }
+  
+  /* Submit button */
+  .btn-primary {
+    background-color: #FFA500; /* Couleur orange douce */
+    border: none;
+    color: #fff;
+    padding: 12px 24px; /* Rembourrage ajusté */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 20px auto; /* Centrer le bouton avec une marge supplémentaire */
+  }
+  
+  .btn-primary:hover {
+    background-color: #FFD700; /* Nuance plus claire d'orange au survol */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .container {
+      width: 90%;
+      padding: 15px;
+    }
+  
+    input[type="text"],
+    textarea {
+      width: 100%;
+    }
+  }
+  

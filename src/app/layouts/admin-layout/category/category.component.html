@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card text-center">
+            <div class="col-md-12">
+                <button mat-raised-button style="margin: 60px;" color="primary" (click)="openAddCategoryForm()">Add Category</button>
+            </div>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Category Name</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                     
+                    </tr>
+                </thead>
+                
+                <tbody>
+                  
+                    <tr *ngFor="let category of listCategories">
+                        <td> {{category.id}}</td>
+                        <td>{{category.name}}</td>
+                        <td>{{category.description}}</td>
+                        <td>
+                            <div>
+                                <button type="button" mat-raised-button color="primary" (click)="openUpdateCategoryDialog(category.id,category)">Update</button> |
+                                <button type="button" mat-raised-button color="accent" (click)="deleteCategorieById(category.id)">Delete</button> 
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -10,24 +10,30 @@ import { ProfilLayoutsComponent } from './layouts/profil-layouts/profil-layouts.
 const routes: Routes = [
   {path:'',component:TemplateLayoutComponent,children:[
     {path:'',loadChildren:()=>import('./views/interface/home/home.module').then(m=>m.HomeModule)},
+    
 
 
 
   ]},
   {path:'login',loadChildren:()=>import('./views/interface/login/login.module').then(m=>m.LoginModule)},
-  {path:'registre',loadChildren:()=>import('./views/interface/registre/registre.module').then(m=>m.RegistreModule)},
+      {path:'registre',loadChildren:()=>import('./views/interface/registre/registre.module').then(m=>m.RegistreModule)},
 
 
   {path:'admin',component:AdminLayoutComponent,children:[
     {path:'',loadChildren:()=>import('./views/admin/dashboard/dashboard.module').then(m=>m.DashboardModule)},
     {path:'dashboard',loadChildren:()=>import('./views/admin/dashboard/dashboard.module').then(m=>m.DashboardModule)},
+    {path:'categories',component:CategoryComponent},
+    {path:'addCategory',component:AddCategoryComponent},
+    { path: 'update-categorie/:id', component: UpdateCategoryComponent },
+    {path:'reservation',loadChildren:()=>import('./views/admin/reservation/get-reservation/get-reservation.module').then(m=>m.GetReservationModule)},
+
+
   ]},
-  {path:'categories',component:CategoryComponent},
-  {path:'addCategory',component:AddCategoryComponent},
-  { path: 'update-categorie/:id', component: UpdateCategoryComponent },
 
   {path:'client',component:ProfilLayoutsComponent,children:[
     {path:'reservation',loadChildren:()=>import('./views/client/post-reservation/post-reservation.module').then(m=>m.PostReservationModule)},
+    {path:'reservationall',loadChildren:()=>import('./views/client/getall-reservation/getall-reservation.module').then(m=>m.GetallReservationModule)},
+
 
 
 

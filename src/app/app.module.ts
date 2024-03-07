@@ -19,7 +19,6 @@ import { LoginComponent } from './views/interface/login/login.component';
 import { RegistreComponent } from './views/interface/registre/registre.component';
 
 import { ProfilLayoutsComponent } from './layouts/profil-layouts/profil-layouts.component';
-import { PostReservationComponent } from './views/client/post-reservation/post-reservation.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +29,7 @@ import { PostReservationComponent } from './views/client/post-reservation/post-r
     CategoryComponent,
     UpdateCategoryComponent,
     AddCategoryComponent,
+
 
   ],
   imports: [
@@ -45,7 +45,7 @@ import { PostReservationComponent } from './views/client/post-reservation/post-r
     NgbModule,
 
 
-    
+
 
   ],
   providers: [],

@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
         if (this.roles.includes('ADMIN')) {
           this.router.navigate(['/admin']);
         } else {
-          this.router.navigate(['/client']); 
+          this.router.navigate(['/client']);
         }
       },
       error: err => {

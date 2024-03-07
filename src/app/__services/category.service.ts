@@ -28,5 +28,8 @@ export class CategoryService {
   return this.httpClient.put(`${this.API_URL}/update-categorie/${id}`, categorieDetails);
 }
 
+getCategories(): Observable<Category[]> {
+  return this.httpClient.get<Category[]>(this.API_URL);
+}
 
 }

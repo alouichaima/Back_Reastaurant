@@ -6,17 +6,16 @@ import { CategoryComponent } from './layouts/admin-layout/category/category.comp
 import { AddCategoryComponent } from './layouts/admin-layout/category/add-category/add-category.component';
 import { UpdateCategoryComponent } from './layouts/admin-layout/category/update-category/update-category.component';
 import { ProfilLayoutsComponent } from './layouts/profil-layouts/profil-layouts.component';
+import { MenuItem } from './models/menu-item';
+import { MenuItemComponent } from './layouts/admin-layout/menu-item/menu-item.component';
 
 const routes: Routes = [
   {path:'',component:TemplateLayoutComponent,children:[
     {path:'',loadChildren:()=>import('./views/interface/home/home.module').then(m=>m.HomeModule)},
-
-
-
   ]},
+  
   {path:'login',loadChildren:()=>import('./views/interface/login/login.module').then(m=>m.LoginModule)},
   {path:'registre',loadChildren:()=>import('./views/interface/registre/registre.module').then(m=>m.RegistreModule)},
-
 
   {path:'admin',component:AdminLayoutComponent,children:[
     {path:'',loadChildren:()=>import('./views/admin/dashboard/dashboard.module').then(m=>m.DashboardModule)},
@@ -26,11 +25,10 @@ const routes: Routes = [
   {path:'addCategory',component:AddCategoryComponent},
   { path: 'update-categorie/:id', component: UpdateCategoryComponent },
 
+  {path:'menu-item',component:MenuItemComponent},
+
   {path:'client',component:ProfilLayoutsComponent,children:[
-    {path:'reservation',loadChildren:()=>import('./views/client/post-reservation/post-reservation.module').then(m=>m.PostReservationModule)},
-
-
-
+  {path:'reservation',loadChildren:()=>import('./views/client/post-reservation/post-reservation.module').then(m=>m.PostReservationModule)},
 
   ]}
 

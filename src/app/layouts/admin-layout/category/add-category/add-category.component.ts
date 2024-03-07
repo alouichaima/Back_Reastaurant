@@ -45,12 +45,10 @@ export class AddCategoryComponent implements OnInit{
           this.close();
         },
         error => {
-          // Gérez l'erreur du backend si nécessaire
           console.error('Error adding category', error);
         }
       );
     } else {
-      // Gérez le formulaire invalide si nécessaire
     }
   }
 

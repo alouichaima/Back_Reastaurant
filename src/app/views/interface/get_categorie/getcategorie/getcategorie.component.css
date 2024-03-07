@@ -1,0 +1,106 @@
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+     background-color:#dccd8c;
+    background-image: url("/assets/template/images/banner.jpg");
+  
+    
+  }
+  
+  .card {
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  table {
+    width: 100%;
+   
+    margin-top: 20px;
+  }
+  
+  thead {
+    background-color: #dccd8c; 
+    font-size: 17px;
+    font-family: 'Cambria, Cochin, Georgia, Times, Times New Roman, serif';
+    color: #cc6d0f;
+    
+   
+  }
+  
+  th {
+    padding: 20px;
+    text-align: left;
+    border-bottom: 2px solid #e9831a;    
+    
+    
+  }
+  td {
+    text-align: left;
+    
+  }
+  
+  tr:hover {
+    background-color: rgba(255, 170, 128, 0.3); /* Light orange hover color */
+  }
+  
+  /* Button Styles */
+  button {
+    margin: 10px;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #ea8a1d; /* Dark burgundy hover color */
+    color: #fff; /* White text color */
+  }
+  
+  /* Primary Button */
+  button.primary {
+    background-color: #ffaa80; /* Soft Orange color */
+    color: #fff;
+  }
+  
+  button.primary:hover {
+    background-color: #ffbb99; /* Lighter orange hover color */
+  }
+  
+  /* Accent Button */
+  button.accent {
+    background-color: #d5b95c; /* Burgundy color */
+    color: #fff;
+  }
+  
+  button.accent:hover {
+    background-color: #dccd8c; /* Darker burgundy hover color */
+  }
+  
+  /* Actions Buttons */
+  .actions button {
+    margin-right: 5px;
+  }
+  
+  .actions button:last-child {
+    margin-right: 0;
+  }
+  
+
+ .card{
+  background-color:#dccd8c;
+ }
+ .centered-form{
+  position: absolute;
+  top: -20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

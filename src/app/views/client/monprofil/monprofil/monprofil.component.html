@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="panel-body inf-content">
+      <div class="row">
+          <div class="col-md-4">
+              <img
+        src="data:image/png;base64,{{ OneUser.photo }}"
+        style="width:190px; margin-top: 0.5cm;"
+        alt="" />
+              <ul title="Ratings" class="list-inline ratings text-center">
+                  <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+                  <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
+              </ul>
+          </div>
+          <div class="col-md-6">
+              <strong>Information</strong><br>
+              <div class="table-responsive">
+              <table class="table table-user-information">
+                  <tbody>
+                      <tr>
+                          <td>
+                              <strong>
+                                  <span class="glyphicon glyphicon-asterisk text-primary"></span>
+                                 Usernamne
+                              </strong>
+                          </td>
+                          <td class="text-primary">
+                            {{OneUser.username}}
+                          </td>
+                      </tr>
+
+
+                      <tr>
+                          <td>
+                              <strong>
+                                  <span class="glyphicon glyphicon-bookmark text-primary"></span>
+                                  Email
+                              </strong>
+                          </td>
+                          <td class="text-primary">
+                            {{ OneUser.email }}
+                          </td>
+                      </tr>
+
+
+                  </tbody>
+              </table>
+              <button type="button" class="btn btn-outline-success btn-rounded" data-mdb-ripple-color="dark" (click)="update(User)">Edit</button>
+
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>

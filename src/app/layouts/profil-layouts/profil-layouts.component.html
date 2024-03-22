@@ -4,30 +4,45 @@
         <section class="module">
             <div class="module-inner">
                 <div class="side-bar">
-                    <div class="user-info">
-                        <img class="img-profile img-circle img-responsive center-block" src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="">
-                        <ul class="meta list list-unstyled">
-                            <li class="name">Rebecca Sanders
-                                <label class="label label-info">UX Designer</label>
-                            </li>
-                            <li class="email"><a href="#">Rebecca.S@website.com</a></li>
-                            <li class="activity">Last logged in: Today at 2:18pm</li>
-                        </ul>
+                  <div class="user-info">
+                    <img  class="img-profile img-circle img-responsive center-block" src="data:image/png;base64,{{OneUser.photo}}"  data-holder-rendered="true" >
+                   <form (ngSubmit)="updatephoto()"><br>
+                    <div class="img" >
+                      <div class="form-group">
+                        <label for="exampleFormControlFile1">Photo</label>
+                        <input type="file" class="form-control-file" id="exampleFormControlFile1"
+                        name="path"
+                        [required]="true"
+                        #photo="ngModel" ngModel
+                        (change)="selectImage($event)">
+                      </div>
                     </div>
+                    <!-- <button class="btn btn-info">update</button> -->
+                    <button  class="btn btn-secondary">Modifier</button>
+
+                  </form>
+                   <ul class="meta list list-unstyled">
+                       <li></li>
+                       <li class="name">
+                           <!-- <label class="label label-info">UX Designer</label> -->
+                       </li>
+                                </ul>
+               </div>
             		<nav class="side-menu">
         				<ul class="nav">
-        					<li class="active"><a href="#"><span class="fa fa-user"></span> Profile</a></li>
-                            <li class="active"><a href="#"><span class="fa fa-user"></span> Home Page</a></li>
-        					<li><a routerLink="/client/reservation"><span class="fa fa-cog"></span> Reservation</a></li>
+                  <li class="active"><a href="#"><span class="fa fa-home"></span> Home Page</a></li>
+
+        					<li class="active"><a href="/client/monprofil"><span class="fa fa-user"></span> Profile</a></li>
+        					<li><a routerLink="/client/reservation"><span class="fa fa-clock-o"></span> Reservation</a></li>
                   <li><a routerLink="/client/reservationall"><span class="fa fa-cog"></span>List Reservations</a></li>
 
-        					<li><a href="#"><span class="fa fa-credit-card"></span> Billing</a></li>
+        					<!-- <li><a href="/client/monprofil"><span class="fa fa-credit-card"></span> My Profil</a></li> -->
         					<li><a href="#"><span class="fa fa-envelope"></span> Messages</a></li>
 
         					<li><a href="user-drive.html"><span class="fa fa-th"></span> Drive</a></li>
         					<li><a href="#"><span class="fa fa-clock-o"></span> Reminders</a></li>
                             <li class="nav-item">
-                                <a href class="nav-link" (click)="logout()">LogOut</a>
+                                <a href class="nav-link" (click)="logout()"><span class="fas fa-sign-out"></span>LogOut</a>
                             </li>
         				</ul>
         			</nav>
@@ -42,9 +57,11 @@
                           </div>
 
                       </div>
+
                       <router-outlet></router-outlet>
 
                   </div></div>
+
                 <!-- <div class="content-panel">
                     <h2 class="title">Profile<span class="pro-label label label-warning">PRO</span></h2>
                     <form class="form-horizontal">

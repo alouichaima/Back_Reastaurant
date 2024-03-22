@@ -27,4 +27,6 @@ export class UserService {
     return this.http.get(API_URL + 'admin', { responseType: 'text' });
   }
 
+  
+
 }

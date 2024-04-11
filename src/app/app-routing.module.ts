@@ -8,9 +8,9 @@ import { UpdateCategoryComponent } from './layouts/admin-layout/category/update-
 import { ProfilLayoutsComponent } from './layouts/profil-layouts/profil-layouts.component';
 import { MenuItem } from './models/menu-item';
 import { MenuItemComponent } from './layouts/admin-layout/menu-item/menu-item.component';
-import { MenuComponent } from './layouts/admin-layout/menu/menu.component';
 import { UpdateItemComponent } from './layouts/admin-layout/menu-item/update-item/update-item.component';
 import { AddMenuItemComponent } from './layouts/admin-layout/menu-item/add-item/add-item.component';
+import { FoodmenuComponent } from './layouts/admin-layout/foodmenu/foodmenu.component';
 
 const routes: Routes = [
   {path:'',component:TemplateLayoutComponent,children:[
@@ -39,7 +39,7 @@ const routes: Routes = [
   {path:'menu-item',component:MenuItemComponent},
   {path:'addItem',component:AddMenuItemComponent},
   {path:'update-item/:id',component:UpdateItemComponent},
-  {path:'menu',component: MenuComponent },
+  {path:'menu',component: FoodmenuComponent },
   {path:'client',component:ProfilLayoutsComponent,children:[
   {path:'reservation',loadChildren:()=>import('./views/client/post-reservation/post-reservation.module').then(m=>m.PostReservationModule)},
 

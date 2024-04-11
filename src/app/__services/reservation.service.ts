@@ -25,6 +25,14 @@ postReservation(reservationDto: any): Observable<any> {
 
 }
 
+getReservationsByUser():Observable<any>{
+  return this.http.get<[]>(BASIC_URL + `/api/client/reservations/${StorageService.getUserId()}`,
+  {
+    headers:this.createAuthorizationHeader()
+  })
+}
+
+
 
 createAuthorizationHeader():HttpHeaders{
   let authHeaders:HttpHeaders = new HttpHeaders();

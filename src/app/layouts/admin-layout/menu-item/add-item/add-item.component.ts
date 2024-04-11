@@ -14,7 +14,8 @@ export class AddMenuItemComponent implements OnInit {
   @Output() closeEvent = new EventEmitter();
   menuItemForm!: FormGroup;
   categories: Category[] = [];
-  category!:Category;
+  selectedCategoryId: number | null = null; 
+
   constructor(
     private formBuilder: FormBuilder,
     private menuItemService: MenuitemService
@@ -25,7 +26,7 @@ export class AddMenuItemComponent implements OnInit {
       name: [null, Validators.required],
       description: [null, Validators.required],
       prix: [null, Validators.required],
-      categorie_id: [null, Validators.required]
+      categorieId: [null, Validators.required]
     });
 
     this.loadCategories();
@@ -45,6 +46,7 @@ export class AddMenuItemComponent implements OnInit {
   onSubmit(): void {
     if (this.menuItemForm.valid) {
       const menuItemData = this.menuItemForm.value;
+      menuItemData.categorieId = this.selectedCategoryId; // Assign selected category ID
 
       this.menuItemService.addItem(menuItemData).subscribe(
         response => {
@@ -66,7 +68,12 @@ export class AddMenuItemComponent implements OnInit {
         }
       );
     } else {
+      // Handle form validation errors
     }
+  }
+
+  onCategoryChange(categoryId: number): void {
+    this.selectedCategoryId = categoryId;
   }
 
   close(): void {

@@ -22,7 +22,6 @@ import { PostReservationComponent } from './views/client/post-reservation/post-r
 import { AddMenuItemComponent } from './layouts/admin-layout/menu-item/add-item/add-item.component';
 import { UpdateItemComponent } from './layouts/admin-layout/menu-item/update-item/update-item.component';
 import { MenuItemComponent } from './layouts/admin-layout/menu-item/menu-item.component';
-import { AddMenuComponent } from './layouts/admin-layout/menu/add-menu/add-menu.component';
 import { MenuComponent } from './layouts/admin-layout/menu/menu.component';
 
 @NgModule({
@@ -38,7 +37,6 @@ import { MenuComponent } from './layouts/admin-layout/menu/menu.component';
     UpdateItemComponent,
     MenuItemComponent,
     MenuComponent,
-    AddMenuComponent
   ],
   imports: [
     BrowserModule,

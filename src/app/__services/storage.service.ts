@@ -25,11 +25,10 @@ export class StorageService {
     const token = localStorage.getItem(TOKEN_KEY);
     return token ? token : null;
   }
-
-
-  clean(): void {
-    localStorage.clear();
+  signOut(): void {
+    localStorage.clear(); 
   }
+
 
   saveUser(user: any): void {
     localStorage.removeItem(USER_KEY);

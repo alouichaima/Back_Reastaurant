@@ -1,33 +1,153 @@
-label {
-  margin-top: -20cm;
-  display: block;
+.body
+{
+    width:50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    animation: zoom-out 3s linear infinite;
+    background-size: cover;
+    border-bottom:2px solid transparent;
+    
+    
+   }
+
+   @keyframes zoom-out {
+
+       100% {
+           width: 100%;
+       }
+   }
+
+
+
+
+
+   .wrap {
+
+   width: 60%;
+   height: 180%;
+   min-height: 100%;
+   top: 0;
+   left: 0;
+   z-index: 10;
+   text-align:center;
+   text-transform: capitalize;
+   background-color: rgba(230, 230, 230, 0.66);
+   border-bottom: 2px solid transparent;
+   padding-top: 0%;
+   padding: 0cm;
+   -o-transition: all .2s;
+   -moz-transition: all .2s;
+   -webkit-transition: all .2s;
+   -ms-transition: all .2s;
+   margin-top: 1px;
+   -moz-border-radius: 6px;
+   -webkit-border-radius: 6px;
+   text-align: center;
+   border-radius: 20px;
+   margin-top: 8cm;
+   margin-left: 12cm;
+
+}
+   .form {  width: 280px;
+           height: 50;
+           margin: 0 auto;
+           background-repeat: no-repeat;
+           /* background:rgb(255, 255, 255);  */
+           height: 85%;
+           min-height: 80%;
+           top: 0;
+           left: 0;
+           z-index: 99;
+           text-align: left;
+           text-transform: capitalize;
+           border-bottom:2px solid transparent;
+           padding-top: 0%;
+           padding :0cm;
+           -o-transition: all .2s;
+           -moz-transition: all .2s;
+           -webkit-transition: all .2s;
+           -ms-transition: all .2s;
+           margin-top: 1px;
+           -moz-border-radius: 6px;
+           -webkit-border-radius: 6px;
+           text-align: center;
+           border-radius: 1px;
+
+       }
+       .input
+     {
+       width: 300px;
+       height: 20px;
+       margin-top: 1px;
+       padding: 15px;
+       background: #ffffff;
+       background: rgba(252, 252, 252, 0.15);
+       -moz-border-radius: 6px;
+       -webkit-border-radius: 6px;
+       text-align: center;
+       border-radius: 1px;
+       -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .1) inset;
+       box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .1) inset;
+       font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+       font-size: 40px;
+       text-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+       transition: all .1s;
+       -moz-transition: all .1s;
+       -webkit-transition: all .1s;
+       -ms-transition: all .1s;
+       position: relative;
+       margin-left: 4cm;
+
+     }
+     .form-control[type="text"], .form-control[type="password"]
+{
+   width:300px;
+   height:42px;
+   margin-top:25px;
+   padding:0 15px;
+   background:#2d2d2d;
+   background:rgba(45,45,45,.15);
+   -moz-border-radius: 6px;
+   -webkit-border-radius:6px;
+   text-align:center;
+   border-radius:6px;
+   border:1px solid #3d3d3d;
+   border:1px solid rgba(255,255,255,.15);
+   -moz-box-shadow:0 2px 3px 0 rgba(0,0,0,.1) inset;
+   -webkit-box-shadow: 0 2px 3px 0 rgba(0,0,0,.1) inset;
+   box-shadow: 0 2px 3px 0 rgba(0,0,0,.1) inset;
+   font-family: 'PT Sans', Helvetica, Arial, sans-serif;
+   font-size:16px;
+   color:#000000;
+   text-shadow:0 1px 2px rgba(0,0,0,.1);
+   -o-transition: all .2s;
+   -moz-transition: all .2s;
+   -webkit-transition: all .2s;
+   -ms-transition: all .2s;
+   margin-left: 2cm;
+
+}
+
+.btn{background-color: #f44336;
+  color:rgb(255, 255, 255);
+  width: 50%;
+  height: 40px;
+  border: 0;
+  font-size: 14px;
+  font-weight: 200;
   margin-top: 10px;
-}
+  outline: 0;
+  border-radius: 20px;
+  text-transform: lowercase;
+  cursor: pointer;
+  letter-spacing: 1px;
+  transition: background-color 0.5s ease;
+  margin-left: 3cm;}
+  
 
-.card-container.card {
-  max-width: 400px !important;
-  padding: 40px 40px;
-}
-
-.card {
-  background-color: #f7f7f7;
-  padding: 20px 25px 30px;
-  margin: 0 auto 25px;
-  margin-top: 50px;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-}
-
-.profile-img-card {
-  width: 96px;
-  height: 96px;
-  margin: 0 auto 10px;
-  display: block;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-}
+  .mot{
+    color: #f44336;
+    font-family: 'Akronim', cursive;
+    font-size: 1.5cm;
+  }

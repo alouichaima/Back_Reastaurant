@@ -1,0 +1,35 @@
+<mat-spinner [diameter]="50" [strokeWidth]="5" *ngIf="isSpinning"></mat-spinner>
+<table mat-table [dataSource]="reservations" class="mat-elevation-z8">
+  <ng-container matColumnDef="tableType">
+    <th mat-header-cell *matHeaderCellDef style="font-weight: bolder; color: #003973;">Table Type</th>
+    <td mat-cell *matCellDef="let reservation">{{ reservation.tableType }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="description">
+    <th mat-header-cell *matHeaderCellDef style="font-weight: bolder; color: #003973;">Description</th>
+    <td mat-cell *matCellDef="let reservation">{{ reservation.description }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="dateTime">
+    <th mat-header-cell *matHeaderCellDef style="font-weight: bolder; color: #003973;">Reservation Time</th>
+    <td mat-cell *matCellDef="let reservation">{{ reservation.dateTime  }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="reservationDate">
+    <th mat-header-cell *matHeaderCellDef style="font-weight: bolder; color: #003973;">Reservation Date</th>
+    <td mat-cell *matCellDef="let reservation">{{ reservation.dateTime  }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <th mat-header-cell *matHeaderCellDef style="font-weight: bolder; color: #003973;">Status</th>
+    <td mat-cell *matCellDef="let reservation">
+      <strong [style.color]="(reservation.reservationStatus === 'APPROVED') ? 'green' : (reservation.reservationStatus === 'DISAPPROVED') ? 'blue' : 'red'">
+        {{ reservation.reservationStatus }}
+      </strong>
+
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="['tableType', 'description', 'dateTime', 'reservationDate', 'status']"></tr>
+  <tr mat-row *matRowDef="let row; columns: ['tableType', 'description', 'dateTime', 'reservationDate', 'status']"></tr>
+</table>

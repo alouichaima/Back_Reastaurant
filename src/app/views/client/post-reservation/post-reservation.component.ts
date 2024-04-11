@@ -10,7 +10,6 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 import { ReservationService } from 'src/app/__services/reservation.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -35,7 +34,7 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class PostReservationComponent  {
   colorControl = new FormControl('primary' as ThemePalette);
-  
+
 
   // isSpinning:boolean=false;
   tableControl = new FormControl();
@@ -66,6 +65,7 @@ export class PostReservationComponent  {
 
   postReservation(){
     console.log(this.validateForm.value);
+
     this.service.postReservation(this.validateForm.value).subscribe((res)=>{
       console.log(res);
       if (res.id != null){

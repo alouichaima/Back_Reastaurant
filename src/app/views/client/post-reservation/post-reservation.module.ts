@@ -14,6 +14,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     CommonModule,
     PostReservationRoutingModule,
     MatSnackBarModule
-  ]
+  ],
+
 })
 export class PostReservationModule { }

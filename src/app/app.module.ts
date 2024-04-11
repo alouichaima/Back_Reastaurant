@@ -14,7 +14,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule,FormGroup } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms'; 
+import { ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './views/interface/login/login.component';
 import { RegistreComponent } from './views/interface/registre/registre.component';
 import { ProfilLayoutsComponent } from './layouts/profil-layouts/profil-layouts.component';
@@ -22,8 +22,6 @@ import { PostReservationComponent } from './views/client/post-reservation/post-r
 import { AddMenuItemComponent } from './layouts/admin-layout/menu-item/add-item/add-item.component';
 import { UpdateItemComponent } from './layouts/admin-layout/menu-item/update-item/update-item.component';
 import { MenuItemComponent } from './layouts/admin-layout/menu-item/menu-item.component';
-import { AddMenuComponent } from './layouts/admin-layout/menu/add-menu/add-menu.component';
-import { MenuComponent } from './layouts/admin-layout/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -37,8 +35,6 @@ import { MenuComponent } from './layouts/admin-layout/menu/menu.component';
     AddMenuItemComponent,
     UpdateItemComponent,
     MenuItemComponent,
-    MenuComponent,
-    AddMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +47,7 @@ import { MenuComponent } from './layouts/admin-layout/menu/menu.component';
     MatPaginatorModule,
     FormsModule,
     NgbModule,
-    
+
 
 
 

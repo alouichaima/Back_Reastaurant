@@ -15,6 +15,13 @@ export class MenuitemService {
   fetchItemList(): Observable<any> {
     return this.httpClient.get(`${this.API_URL}/all-items`);
   }
+  getAllCategories(){
+    return this.httpClient.get(`${this.API_URL}/all-categories`)
+  }
+  getAllMenuItems(){
+    return this.httpClient.get(`${this.API_URL}/all-items`)
+  }
+
 
   addItem(item: any): Observable<any> {
     return this.httpClient.post(`${this.API_URL}/additem`, item);

@@ -8,7 +8,6 @@ import { UpdateCategoryComponent } from './layouts/admin-layout/category/update-
 import { ProfilLayoutsComponent } from './layouts/profil-layouts/profil-layouts.component';
 import { MenuItem } from './models/menu-item';
 import { MenuItemComponent } from './layouts/admin-layout/menu-item/menu-item.component';
-import { MenuComponent } from './layouts/admin-layout/menu/menu.component';
 
 const routes: Routes = [
   {path:'',component:TemplateLayoutComponent,children:[
@@ -20,14 +19,8 @@ const routes: Routes = [
 
   ]},
 
-  
   {path:'login',loadChildren:()=>import('./views/interface/login/login.module').then(m=>m.LoginModule)},
       {path:'registre',loadChildren:()=>import('./views/interface/registre/registre.module').then(m=>m.RegistreModule)},
-
-
-
-    
-
 
   {path:'admin',component:AdminLayoutComponent,children:[
     {path:'',loadChildren:()=>import('./views/admin/dashboard/dashboard.module').then(m=>m.DashboardModule)},
@@ -36,21 +29,21 @@ const routes: Routes = [
     {path:'addCategory',component:AddCategoryComponent},
     { path: 'update-categorie/:id', component: UpdateCategoryComponent },
     {path:'reservation',loadChildren:()=>import('./views/admin/reservation/get-reservation/get-reservation.module').then(m=>m.GetReservationModule)},
+    {path:'menu-item',component:MenuItemComponent},
+
 
 
   ]},
 
-  {path:'menu-item',component:MenuItemComponent},
-  { path: 'menu', component: MenuComponent },
+  // {path:'menu-item',component:MenuItemComponent},
+
   {path:'client',component:ProfilLayoutsComponent,children:[
     {path:'reservation',loadChildren:()=>import('./views/client/post-reservation/post-reservation.module').then(m=>m.PostReservationModule)},
     {path:'reservationall',loadChildren:()=>import('./views/client/getall-reservation/getall-reservation.module').then(m=>m.GetallReservationModule)},
     {path:'reservation',loadChildren:()=>import('./views/client/post-reservation/post-reservation.module').then(m=>m.PostReservationModule)},
 
-
     {path:'monprofil', loadChildren:()=>import('./views/client/monprofil/monprofil/monprofil.module').then(m=>m.MonprofilModule)},
     {path:'editprofil', loadChildren:()=>import('./views/client/monprofil/editmonprofil/editmonprofil.module').then(m=>m.EditmonprofilModule)},
-
 
 
   ]}

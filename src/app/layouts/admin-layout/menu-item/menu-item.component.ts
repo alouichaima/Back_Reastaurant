@@ -16,7 +16,8 @@ import { Category } from '../category/category';
 })
 export class MenuItemComponent {
   listCategories:any;
-  listMenuItems: MenuItem[] = [];
+  listMenuItems:any;
+  // listMenuItems: MenuItem[] = [];
   menuItem: MenuItem = {
     idItem: null,
     name: null,
@@ -39,8 +40,12 @@ export class MenuItemComponent {
   getAllCategories(){
     this.categoryService.getAllCategories().subscribe(res => this.listCategories = res)
   }
-  getAllMenuItems(): void {
-    this.menuItemService.getMenuItems().subscribe(res => this.listMenuItems = res)
+  // getAllMenuItems(): void {
+  //   this.menuItemService.getMenuItems().subscribe(res => this.listMenuItems = res)
+
+  // }
+  getAllMenuItems() {
+    this.menuItemService.getAllMenuItems().subscribe(res => this.listMenuItems = res)
 
   }
 
@@ -75,5 +80,5 @@ export class MenuItemComponent {
     this.showAddMenuItemForm = false;
   }
 
- 
+
 }

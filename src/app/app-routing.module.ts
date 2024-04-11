@@ -29,10 +29,8 @@ const routes: Routes = [
   {path:'addItem',component:AddMenuItemComponent},
   {path:'update-item/:id',component:UpdateItemComponent},
   {path:'menu',component: MenuComponent },
-
   {path:'client',component:ProfilLayoutsComponent,children:[
   {path:'reservation',loadChildren:()=>import('./views/client/post-reservation/post-reservation.module').then(m=>m.PostReservationModule)},
-
   ]}
 
 ];

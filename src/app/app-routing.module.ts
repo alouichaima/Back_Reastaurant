@@ -9,27 +9,20 @@ import { ProfilLayoutsComponent } from './layouts/profil-layouts/profil-layouts.
 import { MenuItem } from './models/menu-item';
 import { MenuItemComponent } from './layouts/admin-layout/menu-item/menu-item.component';
 import { MenuComponent } from './layouts/admin-layout/menu/menu.component';
+import { UpdateItemComponent } from './layouts/admin-layout/menu-item/update-item/update-item.component';
+import { AddMenuItemComponent } from './layouts/admin-layout/menu-item/add-item/add-item.component';
 
 const routes: Routes = [
   {path:'',component:TemplateLayoutComponent,children:[
     {path:'',loadChildren:()=>import('./views/interface/home/home.module').then(m=>m.HomeModule)},
     {path:'categorieC',loadChildren:()=>import('./views/interface/get_categorie/getcategorie/getcategorie.module').then(m=>m.GetcategorieModule)},
-
-
-
-
   ]},
-
-  
   {path:'login',loadChildren:()=>import('./views/interface/login/login.module').then(m=>m.LoginModule)},
       {path:'registre',loadChildren:()=>import('./views/interface/registre/registre.module').then(m=>m.RegistreModule)},
 
 
 
-    
-
-
-  {path:'admin',component:AdminLayoutComponent,children:[
+    {path:'admin',component:AdminLayoutComponent,children:[
     {path:'',loadChildren:()=>import('./views/admin/dashboard/dashboard.module').then(m=>m.DashboardModule)},
     {path:'dashboard',loadChildren:()=>import('./views/admin/dashboard/dashboard.module').then(m=>m.DashboardModule)},
     {path:'categories',component:CategoryComponent},
@@ -40,8 +33,14 @@ const routes: Routes = [
 
   ]},
 
+  {path:'categories',component:CategoryComponent},
+  {path:'addCategory',component:AddCategoryComponent},
+  {path:'update-categorie/:id', component: UpdateCategoryComponent },
   {path:'menu-item',component:MenuItemComponent},
-  { path: 'menu', component: MenuComponent },
+  {path:'addItem',component:AddMenuItemComponent},
+  {path:'update-item/:id',component:UpdateItemComponent},
+  {path:'menu',component: MenuComponent },
+
   {path:'client',component:ProfilLayoutsComponent,children:[
     {path:'reservation',loadChildren:()=>import('./views/client/post-reservation/post-reservation.module').then(m=>m.PostReservationModule)},
     {path:'reservationall',loadChildren:()=>import('./views/client/getall-reservation/getall-reservation.module').then(m=>m.GetallReservationModule)},
@@ -54,7 +53,6 @@ const routes: Routes = [
 
 
   ]}
-
 
 ];
 

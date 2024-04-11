@@ -1,67 +1,65 @@
-<span style="font-family: verdana, geneva, sans-serif;">
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
-    </head>
-    <body>
-      <div class="container">
-        <nav>
-          <ul>
-            <li><a class="logo">
-              <span class="nav-item">Admin</span>
-            </a></li>
-            <li><a href="/admin">
-              <i class="fas fa-home"></i>
-              <span class="nav-item">Dashboard</span>
-            </a></li>
-            <li><a href="/admin/categories">
-              <i class="fas fa-home"></i>
-              <span class="nav-item">Categories</span>
-            </a></li>
-            <li><a routerLink="/menu-item">
-              <i class="fas fa-user"></i>
-              <span class="nav-item">MenuItems</span>
-            </a></li>
-            <li><a routerLink="/menu">
-              <i class="fas fa-wallet"></i>
-              <span class="nav-item">Menu</span>
-            </a></li>
-            <li><a href="/admin/reservation">
-              <i class="fas fa-chart-bar"></i>
-              <span class="nav-item">Reservation</span>
-            </a></li>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <ul>
+        <li><a class="logo">
+          <span class="nav-item">Admin</span>
+        </a></li>
+        <li><a href="/admin">
+          <i class="fas fa-home"></i>
+          <span class="nav-item">Dashboard</span>
+        </a></li>
+        <li><a href="/admin/categories">
+          <i class="fas fa-home"></i>
+          <span class="nav-item">Categories</span>
+        </a></li>
+        <li><a routerLink="/menu-item">
+          <i class="fas fa-user"></i>
+          <span class="nav-item">MenuItems</span>
+        </a></li>
+        <li><a routerLink="/menu">
+          <i class="fas fa-wallet"></i>
+          <span class="nav-item">Menu</span>
+        </a></li>
+        <li><a href="/admin/reservation">
+          <i class="fas fa-chart-bar"></i>
+          <span class="nav-item">Reservation</span>
+        </a></li>
+        <li><a>
+          <i class="fas fa-tasks"></i>
+          <span class="nav-item">Facture</span>
+        </a></li>
+        <li><a>
+          <i class="fas fa-cog"></i>
+          <span class="nav-item">Settings</span>
+        </a></li>
+        <li><a class="logout">
+          <i class="fas fa-sign-out-alt"></i>
+          <span class="nav-item" (click)="logout()">Log out</span>
+        </a></li>
+      </ul>
+    </nav>
 
+    <section class="main">
+      <div class="main-top">
+        <h1></h1>
+      </div>
+      <div class="main-panel">
+        <div class="content-wrapper pb-0">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
 
-            <li><a>
-              <i class="fas fa-tasks"></i>
-              <span class="nav-item">Facture</span>
-            </a></li>
-            <li><a>
-              <i class="fas fa-cog"></i>
-              <span class="nav-item">Settings</span>
-            </a></li>
-            <li><a class="logout">
-              <i class="fas fa-sign-out-alt"></i>
-              <span class="nav-item" (click)="logout()">Log out</span>
-            </a></li>
-          </ul>
-        </nav>
-
-
-
-        <section class="main">
-          <div class="main-top">
-            <h1></h1>
-
-          <div class="main-panel">
-            <div class="content-wrapper pb-0">
-
-                <router-outlet></router-outlet>
-
-            </div>
-    </div>
 
           <!-- <div class="main-top">
             <h1>Skills</h1>
@@ -118,7 +116,4 @@
               </div>
             </div>
           </section> -->
-        </section>
-      </div>
-    </body>
-    </html></span>
+        

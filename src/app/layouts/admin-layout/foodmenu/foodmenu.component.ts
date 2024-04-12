@@ -12,12 +12,15 @@ import { MenuitemService } from 'src/app/__services/menuitem.service';
 })
 export class FoodmenuComponent {
   categories: Category[] = [];
-  listMenuItems:any;
+  listMenuItems:MenuItem[]=[];
+  menuItems: MenuItem[] = [];
 
   constructor(private menuService: MenuService, private menuItemService:MenuitemService) { }
 
   ngOnInit(): void {
     this.getMenuWithCategories();
+    this.fetchMenuItems();
+
   }
 
   getMenuWithCategories(): void {
@@ -25,11 +28,16 @@ export class FoodmenuComponent {
       this.categories = categories;
     });
   }
-  getAllMenuItems(): void {
-    this.menuItemService.getAllMenuItems().subscribe(menuItems => {
-      this.listMenuItems = menuItems;
-    });
-  }
+ 
 
-  
+  fetchMenuItems(): void {
+    this.menuItemService.fetchItemList().subscribe(
+      (response: any) => {
+        this.menuItems = response; // Assuming the response contains an array of MenuItem objects
+      },
+      (error: any) => {
+        console.error('Error fetching menu items', error);
+      }
+    );
+  }
 }

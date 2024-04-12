@@ -11,7 +11,6 @@
                         <th>Food Name</th>
                         <th>Description</th>
                         <th>price</th>
-                        <th>CategoryId</th>
                         <th>Actions</th>
                      
                     </tr>
@@ -20,14 +19,14 @@
                 <tbody>
                   
                     <tr *ngFor="let item of listMenuItems">
-                        <td> {{item.idItem}}</td>
+                        <td> {{item.id}}</td>
                         <td>{{item.name}}</td>
                         <td>{{item.description}}</td>
                         <td>{{item.price}}</td>
                         <td>
                             <div>
-                                <button type="button" mat-raised-button color="primary" (click)="openAddMenuItemForm()">Update</button> |
-                                <button type="button" mat-raised-button color="accent" (click)="deleteMenuItemById(menuItem.idItem)">Delete</button> 
+                                <button type="button" mat-raised-button color="primary" (click)="openUpdateItemDialog(item.id,item)">Update</button> |
+                                <button type="button" mat-raised-button color="accent" (click)="deleteMenuItemById(item.id)">Delete</button> 
                             </div>
                         </td>
                     </tr>

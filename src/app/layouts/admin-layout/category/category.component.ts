@@ -6,6 +6,7 @@ import { AddCategoryComponent } from './add-category/add-category.component';
 import { UpdateCategoryComponent } from './update-category/update-category.component';
 import Swal from 'sweetalert2';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Menu } from 'src/app/models/menu';
 
 @Component({
   selector: 'app-category',
@@ -24,7 +25,8 @@ export class CategoryComponent implements OnInit{
     this.category={
       id:null,
       name:null,
-      description:null
+      description:null,
+      menus:[],
     }
   }
 

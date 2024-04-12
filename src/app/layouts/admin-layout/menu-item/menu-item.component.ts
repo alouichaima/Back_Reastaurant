@@ -7,6 +7,7 @@ import Swal from 'sweetalert2';
 import { AddMenuItemComponent } from './add-item/add-item.component';
 import { CategoryService } from 'src/app/__services/category.service';
 import { Category } from '../category/category';
+import { UpdateItemComponent } from './update-item/update-item.component';
 
 
 @Component({
@@ -38,7 +39,7 @@ export class MenuItemComponent {
     this.getAllMenuItems();
   }
   getAllCategories(){
-    this.categoryService.getAllCategories().subscribe(res => this.listCategories = res)
+    this.categoryService.getCategories().subscribe(res => this.listCategories = res)
   }
   // getAllMenuItems(): void {
   //   this.menuItemService.getMenuItems().subscribe(res => this.listMenuItems = res)
@@ -50,7 +51,7 @@ export class MenuItemComponent {
   }
 
   addMenuItem(menuItem: any): void {
-    this.menuItemService.addItem(menuItem).subscribe(() => {
+    this.menuItemService.addMenuItem(menuItem).subscribe(() => {
       this.getAllMenuItems();
     });
   }
@@ -79,6 +80,14 @@ export class MenuItemComponent {
   closeAddMenuItemForm(): void {
     this.showAddMenuItemForm = false;
   }
+
+  openUpdateItemDialog(id: number, item: MenuItem) {
+    this.dialog.open(UpdateItemComponent, {
+      data: { id, item },
+      width: '500px', // Set the width as needed
+    });
+  }
+
 
 
 }

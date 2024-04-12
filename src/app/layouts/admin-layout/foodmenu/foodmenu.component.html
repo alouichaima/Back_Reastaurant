@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="category" *ngFor="let category of categories">
+    <h2>{{ category.name }}</h2>
+    <p>{{ category.description }}</p>
+    <ul>
+      <ng-container *ngFor="let menuItem of listMenuItems">
+        <ng-container *ngIf="menuItem.categoryId === category.id">
+          <li>
+            <p class="item-title">Name: {{ menuItem.name }}</p>
+            <p>Description: {{ menuItem.description }}</p>
+            <p class="price">Price: {{ menuItem.price }}</p>
+          </li>
+        </ng-container>
+      </ng-container>
+    </ul>
+  </div>
+</div>

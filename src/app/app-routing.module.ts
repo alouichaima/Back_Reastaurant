@@ -18,7 +18,7 @@ const routes: Routes = [
     {path:'categorieC',loadChildren:()=>import('./views/interface/get_categorie/getcategorie/getcategorie.module').then(m=>m.GetcategorieModule)},
   ]},
   {path:'login',loadChildren:()=>import('./views/interface/login/login.module').then(m=>m.LoginModule)},
-      {path:'registre',loadChildren:()=>import('./views/interface/registre/registre.module').then(m=>m.RegistreModule)},
+  {path:'registre',loadChildren:()=>import('./views/interface/registre/registre.module').then(m=>m.RegistreModule)},
 
 
 
@@ -27,21 +27,20 @@ const routes: Routes = [
     {path:'dashboard',loadChildren:()=>import('./views/admin/dashboard/dashboard.module').then(m=>m.DashboardModule)},
     {path:'categories',component:CategoryComponent},
     {path:'addCategory',component:AddCategoryComponent},
-    { path: 'update-categorie/:id', component: UpdateCategoryComponent },
+    {path: 'update-categorie/:id', component: UpdateCategoryComponent },
     {path:'reservation',loadChildren:()=>import('./views/admin/reservation/get-reservation/get-reservation.module').then(m=>m.GetReservationModule)},
     {path:'menu-item',component:MenuItemComponent},
-
-
+    {path:'addItem',component:AddMenuItemComponent},
+    {path:'update-item/:id',component:UpdateItemComponent},
+    {path:'categories',component:CategoryComponent},
+    {path:'menu',component: FoodmenuComponent },
+    //{path:'addCategory',component:AddCategoryComponent},
+    //{path:'update-categorie/:id', component: UpdateCategoryComponent },
+    
 
   ]},
 
-  {path:'categories',component:CategoryComponent},
-  {path:'addCategory',component:AddCategoryComponent},
-  {path:'update-categorie/:id', component: UpdateCategoryComponent },
-  // {path:'menu-item',component:MenuItemComponent},
-  {path:'addItem',component:AddMenuItemComponent},
-  {path:'update-item/:id',component:UpdateItemComponent},
-  {path:'menu',component: FoodmenuComponent },
+  
   {path:'client',component:ProfilLayoutsComponent,children:[
   {path:'reservation',loadChildren:()=>import('./views/client/post-reservation/post-reservation.module').then(m=>m.PostReservationModule)},
 

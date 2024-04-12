@@ -4,6 +4,8 @@ import { MenuItem } from "./menu-item";
 export class Menu {
     idMenu?:any;
     name!: string;
-    menuItems!: MenuItem[]; 
+    //menuItems!: MenuItem[]; 
     category!: Category; 
+    menus!: MenuItem[];
+
 }

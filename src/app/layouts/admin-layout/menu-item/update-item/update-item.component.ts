@@ -14,10 +14,11 @@ import { MenuItem } from 'src/app/models/menu-item';
 })
 export class UpdateItemComponent implements OnInit{
   @Input() id!: number;
-  menuItem!:MenuItem;
+  item!: MenuItem;
   category!: Category;
   updateForm!: FormGroup;
-  categories: Category[] = []; 
+  categories: Category[] = [];
+
   constructor(
     private dialogRef: MatDialogRef<UpdateItemComponent>,
     @Inject(MAT_DIALOG_DATA) private data: any,
@@ -28,20 +29,36 @@ export class UpdateItemComponent implements OnInit{
 
   ngOnInit(): void {
     this.category = this.data.category;
+    this.item = this.data.item;
+    this.loadCategories();
     this.initializeForm();
   }
 
-  initializeForm(): void {
-    this.updateForm = this.fb.group({
-      name: [this.menuItem?.name || null, Validators.required],
-      description: [this.menuItem?.description || null, Validators.required],
-      prix: [this.menuItem?.price || null, Validators.required],
-    });
+  loadCategories(): void {
+    this.categoryService.getAllCategories().subscribe(
+      (response: any) => {
+        this.categories = response;
+      },
+      (error: any) => {
+        console.error('Error loading categories', error);
+      }
+    );
   }
-  
 
-  updateMenuItem(id: number) {
-    if (this.updateForm.valid) {
+  initializeForm(): void {
+    if (this.item) {
+      this.updateForm = this.fb.group({
+        name: [this.item.name || null, Validators.required],
+        description: [this.item.description || null, Validators.required],
+        price: [this.item.price || null, Validators.required],
+        categoryId: [this.item.categoryId || null, Validators.required],
+      });
+    }
+  }
+
+  updateMenuItem() {
+    if (this.updateForm.valid && this.item && this.item.idItem) {
+      const id = this.item.idItem;
       const updatedMenuItem: MenuItem = this.updateForm.value;
       this.itemService.updateItem(id, updatedMenuItem).subscribe(() => {
         Swal.fire({
@@ -63,7 +80,8 @@ export class UpdateItemComponent implements OnInit{
         });
       });
     } else {
-      console.error('Form is invalid');
+      console.error('Form is invalid or ID is not defined');
     }
   }
-}
+  
+}  

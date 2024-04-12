@@ -20,7 +20,7 @@ export class MenuItemComponent {
   listMenuItems:any;
   // listMenuItems: MenuItem[] = [];
   menuItem: MenuItem = {
-    idItem: null,
+    id: null,
     name: null,
     description:null,
     price: null,

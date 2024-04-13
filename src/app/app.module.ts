@@ -37,6 +37,8 @@ import { FoodmenuComponent } from './layouts/admin-layout/foodmenu/foodmenu.comp
     UpdateItemComponent,
     MenuItemComponent,
     FoodmenuComponent,
+    
+    
   ],
   imports: [
     BrowserModule,

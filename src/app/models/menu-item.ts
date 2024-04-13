@@ -1,7 +1,7 @@
 export class MenuItem {
-    idItem?: any;
+    id?:any;
     name!: any;
     description!: any;
     price!: any;
-    categoryId?: any; // Renamed from categorieId to categoryId
+    categoryId?: any; 
 }

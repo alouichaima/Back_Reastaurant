@@ -8,8 +8,8 @@ import { AddMenuItemComponent } from './admin-layout/menu-item/add-item/add-item
 
 @NgModule({
   declarations: [
-    MenuItemComponent,
-    AddMenuItemComponent,
+    
+    
     
   ],
   imports: [

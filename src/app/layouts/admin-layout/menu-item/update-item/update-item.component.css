@@ -1,0 +1,65 @@
+/* update-item.component.css */
+
+/* Main container */
+.container {
+    margin: 20px auto; /* Add margin around the container */
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center align the content */
+  }
+  
+  /* Form title */
+  h2 {
+    color: #FFA500; /* Soft orange color */
+    margin-bottom: 20px;
+  }
+  
+  /* Form fields */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+    color: #555; /* Dark gray color */
+    display: block;
+  }
+  
+  input[type="text"],
+  textarea,
+  input[type="number"] {
+    width: calc(100% - 40px); /* Adjusted width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    display: inline-block; /* Inline block display */
+  }
+  
+  input[type="text"]:focus,
+  textarea:focus,
+  input[type="number"]:focus {
+    outline: none;
+    border-color: #FFA500; /* Soft orange color */
+  }
+  
+  /* Submit button */
+  .btn-primary {
+    background-color: #FFA500; /* Soft orange color */
+    border: none;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #FFD700; /* Lighter shade of orange on hover */
+  }
+  

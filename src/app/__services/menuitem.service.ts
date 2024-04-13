@@ -15,18 +15,17 @@ export class MenuitemService {
   fetchItemList(): Observable<any> {
     return this.httpClient.get(`${this.API_URL}/all-items`);
   }
-  getAllCategories(){
-    return this.httpClient.get(`${this.API_URL}/all-categories`)
-  }
+  // getAllCategories(){
+  //   return this.httpClient.get(`${this.API_URL}/all-categories`)
+  // }
   getAllMenuItems(){
     return this.httpClient.get(`${this.API_URL}/all-items`)
   }
+  
 
-
-  addItem(item: any): Observable<any> {
-    return this.httpClient.post(`${this.API_URL}/additem`, item);
+  addMenuItem(menuItem: MenuItem): Observable<MenuItem> {
+    return this.httpClient.post<MenuItem>(`${this.API_URL}/additem`, menuItem);
   }
-
   deleteItemById(id: any): Observable<any> {
     return this.httpClient.delete(`${this.API_URL}/delete-item/${id}`);
   }
@@ -34,7 +33,6 @@ export class MenuitemService {
   updateItem(id: any, itemDetails: MenuItem): Observable<any> {
     return this.httpClient.put(`${this.API_URL}/update-item/${id}`, itemDetails);
   }
-
   getMenuItems(): Observable<MenuItem[]> {
     return this.httpClient.get<MenuItem[]>(this.API_URL);
   }
@@ -42,4 +40,6 @@ export class MenuitemService {
   getCategories(): Observable<Category[]> {
     return this.httpClient.get<Category[]>(this.API_CAT);
   }
+
+  
 }

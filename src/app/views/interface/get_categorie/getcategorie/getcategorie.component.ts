@@ -30,7 +30,8 @@ export class GetcategorieComponent {
     this.category={
       id:null,
       name:null,
-      description:null
+      description:null,
+      menus:[]
     }
   }
   searchCategory(){

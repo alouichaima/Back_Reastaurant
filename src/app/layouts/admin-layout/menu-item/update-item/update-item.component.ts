@@ -14,10 +14,11 @@ import { MenuItem } from 'src/app/models/menu-item';
 })
 export class UpdateItemComponent implements OnInit{
   @Input() id!: number;
-  menuItem!:MenuItem;
+  item!: MenuItem;
   category!: Category;
   updateForm!: FormGroup;
-  categories: Category[] = []; 
+  categories: Category[] = [];
+
   constructor(
     private dialogRef: MatDialogRef<UpdateItemComponent>,
     @Inject(MAT_DIALOG_DATA) private data: any,
@@ -28,42 +29,59 @@ export class UpdateItemComponent implements OnInit{
 
   ngOnInit(): void {
     this.category = this.data.category;
+    this.item = this.data.item;
+    this.loadCategories();
     this.initializeForm();
   }
 
-  initializeForm(): void {
-    this.updateForm = this.fb.group({
-      name: [this.menuItem?.name || null, Validators.required],
-      description: [this.menuItem?.description || null, Validators.required],
-      prix: [this.menuItem?.price || null, Validators.required],
-    });
+  loadCategories(): void {
+    this.categoryService.getAllCategories().subscribe(
+      (response: any) => {
+        this.categories = response;
+      },
+      (error: any) => {
+        console.error('Error loading categories', error);
+      }
+    );
   }
-  
 
-  updateMenuItem(id: number) {
+  initializeForm(): void {
+    if (this.item) {
+      this.updateForm = this.fb.group({
+        id: [this.item.id || null], // Add this line to include the id in the form
+        name: [this.item.name || null, Validators.required],
+        description: [this.item.description || null, Validators.required],
+        price: [this.item.price || null, Validators.required],
+        categoryId: [this.item.categoryId || null, Validators.required],
+      });
+    }
+
+  }
+
+  updateMenuItem(id: any) {
     if (this.updateForm.valid) {
-      const updatedMenuItem: MenuItem = this.updateForm.value;
-      this.itemService.updateItem(id, updatedMenuItem).subscribe(() => {
+      const updatedItem: MenuItem = this.updateForm.value;
+      this.itemService.updateItem(id, updatedItem).subscribe(() => {
         Swal.fire({
           title: 'Success!',
-          text: 'Menu item updated successfully!',
+          text: 'item updated successfully!',
           icon: 'success',
           timer: 1500,
           timerProgressBar: true
         });
         this.dialogRef.close('Close');
       }, error => {
-        console.error('Error updating Menu Item:', error);
+        console.error('Error updating item:', error);
         Swal.fire({
           title: 'Error!',
-          text: 'Failed to update Menu Item.',
+          text: 'Failed to update item.',
           icon: 'error',
           timer: 1500,
           timerProgressBar: true
         });
       });
     } else {
-      console.error('Form is invalid');
-    }
-  }
-}
+      console.error('item ID or object is undefined');
+    }}
+  
+}  

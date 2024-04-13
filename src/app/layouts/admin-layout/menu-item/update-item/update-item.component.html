@@ -1,32 +1,29 @@
-<!-- update-category.component.html -->
+<!-- update-item.component.html -->
 
 <h2>Update Food</h2>
 
-<form [formGroup]="updateForm" (ngSubmit)="updateMenuItem(category.id)">
-    <div>
-        <label for="name">Food Name:</label>
-        <input type="text" id="name" formControlName="name" required>
-      </div>
-    
-      <div>
-        <label for="description">Description:</label>
-        <textarea id="description" formControlName="description" required></textarea>
-      </div>
-    
-      <div>
-        <label for="prix">Price:</label>
-        <input type="number" id="prix" formControlName="prix" required>
-      </div>
-    
-      <div>
-        <label for="categorieId">Category:</label>
-        <select id="categorieId" formControlName="categorieId" required>
-          <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
-        </select>
-      </div>
-    
-      <div>
-        <button type="submit">Add</button>
-      </div>
+<form [formGroup]="updateForm" (ngSubmit)="updateMenuItem(item.id)">
+  <div>
+    <label for="name">Food Name:</label>
+    <input type="text" id="name" formControlName="name" required>
+  </div>
+
+  <div>
+    <label for="description">Description:</label>
+    <textarea id="description" formControlName="description" required></textarea>
+  </div>
+
+  <div>
+    <label for="price">Price:</label>
+    <input type="number" id="price" formControlName="price" required>
+  </div>
+
+  <div>
+    <label for="categoryId">Category:</label>
+    <select id="categoryId" formControlName="categoryId" required>
+      <option *ngFor="let category of categories" [value]="category.id">{{ category.name }}</option>
+    </select>
+  </div>
+
   <button type="submit" class="btn btn-primary">Update</button>
 </form>

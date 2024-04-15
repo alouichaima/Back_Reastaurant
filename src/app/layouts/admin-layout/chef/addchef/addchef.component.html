@@ -1,1 +1,28 @@
-<p>addchef works!</p>
+<form style="padding: 8cm; margin-top: -8cm;" class="ajout">
+    <div class="mb-3"><label for="nom" class="form-label">Nom et Prenom</label><input type="text"
+        class="form-control" [(ngModel)]="coa.nomPrenom"/>
+  
+    </div>
+    <div class="mb-3"><label for="exampleInputPassword1" class="form-label">Description</label><input type="text"
+        class="form-control" id="exampleInputPassword1"  [(ngModel)]="coa.description"></div>
+  
+          <div class="mb-3"><label for="exampleInputPassword1" class="form-label" placeholder= "Entrer votre URL "  >Image</label><input type="text"
+            class="form-control" id="exampleInputPassword1"  [(ngModel)]="coa.image"></div>
+  
+            <img *ngIf ="url" [src]="url" alt="image">
+  
+            <div class="mb-3"><label for="exampleInputPassword1" class="form-label">Type</label><input type="text"
+              class="form-control" id="exampleInputPassword1"  [(ngModel)]="coa.typeC"></div>
+  
+              <div class="mb-3"><label for="exampleInputPassword1" class="form-label">Facebook</label><input type="text"
+                class="form-control" id="exampleInputPassword1"  [(ngModel)]="coa.facebook"></div>
+                <div class="mb-3"><label for="exampleInputPassword1" class="form-label">Instagram</label><input type="text"
+                  class="form-control" id="exampleInputPassword1"  [(ngModel)]="coa.instagram"></div>
+  
+  
+  
+  <br><br>
+  
+            <a type="submit"  (click)="add()">Submit</a>
+  </form>
+  

@@ -43,7 +43,7 @@ export class ListechefComponent implements OnInit {
 
       }
       update(coa:any){
-        this.router.navigate(['layouts/admin-layout/chef/editchef' ,coa]);
+        this.router.navigate(['admin/editchef' ,coa]);
         let navigationExtras:NavigationExtras={
 
           queryParams:{
@@ -54,7 +54,7 @@ export class ListechefComponent implements OnInit {
 
           }
 
-          this.router.navigate(['layouts/admin-layout/chef/editchef'],navigationExtras);
+          this.router.navigate(['admin/editchef'],navigationExtras);
 
       }
 

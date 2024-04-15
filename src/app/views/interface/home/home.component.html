@@ -203,14 +203,14 @@
                 <div class="team-box">
 
                     <div class="row" >
-                        <div class="col-md-4 col-sm-6">
+                        <div *ngFor="let chef of list" class="col-md-4 col-sm-6">
                             <div class="sf-team">
                                 <div class="thumb">
-                                    <a href="#"><img src="assets/template/images/staff-01.jpg" alt=""></a>
+                                    <a href="#"><img src={{chef.image}} alt=""></a>
                                 </div>
                                 <div class="text-col" >
-                                    <h3 >John Doggett</h3>
-                                    <p>Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Aenean commodo ligula.</p>
+                                    <h3 >{{chef.nomPrenom}}</h3>
+                                    <p>{{chef.description}}</p>
                                     <ul class="team-social">
                                         <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                                         <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>

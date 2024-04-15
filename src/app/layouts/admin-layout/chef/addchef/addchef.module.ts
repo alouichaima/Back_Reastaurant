@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AddchefRoutingModule } from './addchef-routing.module';
 import { AddchefComponent } from './addchef.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,9 @@ import { AddchefComponent } from './addchef.component';
   ],
   imports: [
     CommonModule,
-    AddchefRoutingModule
+    AddchefRoutingModule,
+    FormsModule
+
   ]
 })
 export class AddchefModule { }

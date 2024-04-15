@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CategoryService } from 'src/app/__services/category.service';
+import { ChefService } from 'src/app/__services/chef.service';
 import { MenuitemService } from 'src/app/__services/menuitem.service';
 import { MenuItem } from 'src/app/models/menu-item';
 
@@ -11,6 +12,7 @@ import { MenuItem } from 'src/app/models/menu-item';
 export class HomeComponent {
   listCategories:any;
   listMenuItems:any;
+  listChef : any;
   // listMenuItems: MenuItem[] = [];
   menuItem: MenuItem = {
     id: null,
@@ -23,7 +25,8 @@ export class HomeComponent {
 
   constructor(
     private menuItemService: MenuitemService,
-    private categoryService:CategoryService
+    private categoryService:CategoryService,
+    private chefservice:ChefService
   ) { }
 
   ngOnInit(): void {
@@ -37,6 +40,28 @@ export class HomeComponent {
     this.menuItemService.getAllMenuItems().subscribe(res => this.listMenuItems = res)
 
   }
+
+  /*getAllChef() {
+    this.chefservice.getAllChef().subscribe(res => this.listChef = res)
+  }*/
+
+
+  
+  getAllChef():void{
+
+    this.chefservice.getAllChef().subscribe({next: (data) => {
+
+    this.listChef= data;
+
+    console.log(data);
+
+    },
+
+    error: (c) => console.error(c)
+
+    });
+
+      }
 
   
 

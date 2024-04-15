@@ -1,0 +1,51 @@
+
+<div style="margin-top: -1cm;" class="row">
+    <div class="row bootstrap snippets bootdeys">
+      <div class="col-md-9 col-sm-7">
+          <h2 style="margin-left: 1.5cm;">Liste des chefs</h2>
+  
+  </div>
+  <!-- Trainer Section Begin -->
+  
+  <section style="padding: 15px; " class="trainer-section spad">
+      <div style="padding: 4px;" class="container">
+        <div style="margin-left: 17cm;" class="ajout" >
+          <a   type="button"  routerLink="/layouts/admin-layout/chef/addchef">Ajouter chef</a>
+          </div>
+          <div class="row">
+              <div class="col-lg-12">
+                  <div class="section-title">
+                  </div>
+              </div>
+          </div>
+          <div  class="row" style="margin-top: -1.5cm;">
+              <div class="row row-cols-1 row-cols-md-3 g-4">
+                  <div class="single-trainer-item"  *ngFor="let chef of list" >
+                      <img   >
+                      <div  class="trainer-text">
+                          <h5 style="color: #000000;">{{chef.nomPrenom}}</h5>
+                          <span style="color :rSERVICESgb(0, 0, 0)">{{chef.typeC}}</span>
+                          <p>{{chef.description}}</p>
+                          <div class="trainer-social">
+                            <a href="{{chef.facebook}}"><i class="fa fa-facebook" style="color: #f44336;"></i></a>
+                            <a href="{{chef.instagram}}"><i class="fa fa-instagram" style="color: #f44336;"></i></a>
+                          <ul style="margin-top: -1.2cm;"  class="list-unstyled mb-0 d-flex justify-content-end">
+                            <li ><button class="text-info" data-toggle="tooltip" title=""  data-original-title="Edit" (click)="update(chef)"><i  class="fas fa-pencil-alt"></i></button></li>&nbsp;&nbsp;&nbsp;
+                            <li ><button  class="text-danger" data-toggle="tooltip" title="" data-original-title="Delete" (click)="deleteChef(chef.id)"><i class="far fa-trash-alt"></i></button></li>
+                          </ul>
+                        </div>
+                      </div>
+  
+                  </div>
+              </div>
+          </div>
+  
+      </div>
+  
+    </section>
+  
+  
+  <!-- Trainer Section End -->
+  
+  
+  

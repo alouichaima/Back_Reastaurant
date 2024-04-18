@@ -1,0 +1,69 @@
+<form style="margin-left: 5cm; margin-top: 1cm;" (ngSubmit)="onSubmit()">
+    <h2 style="margin-left: 8.5cm;">Modifier chef</h2>
+    <div class="container" >
+      <div class="row gutters">
+        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="row gutters">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div class="form-group">
+                    <label for="fullName">Nom Prenom</label>
+                    <input type="text" class="form-control" id="nom" name="nom" [(ngModel)]="coa.nomPrenom"/>
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div class="form-group">
+                    <label for="poids">Despription</label>
+                    <input type="text" class="form-control" [(ngModel)]="coa.description" name="description" />
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div class="form-group">
+                    <label for="prenom">Image</label>
+                    <input type="text" class="form-control"  [(ngModel)]="coa.image" name="image"/>
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div class="form-group">
+                    <label for="facebook">Facebook</label>
+                    <input type="text" class="form-control"  id="facebook"
+                    [(ngModel)]="coa.facebook" name="facebook" />
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div class="form-group">
+                    <label for="insta">Instagram</label>
+                    <input type="text" class="form-control"  id="insta"
+                    [(ngModel)]="coa.instagram" name="instagram" />
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                  <div class="form-group">
+                    <label for="dt">Type </label>
+                    <input type="text" class="form-control"  [(ngModel)]="coa.typeC" name="type"
+                     />
+                  </div>
+                </div>
+              </div>
+              <div class="row gutters">
+  
+  
+  
+              </div>
+              <div class="row gutters">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                  <div class="text-right">
+                    <button  color="primary" type="submit" class="btn btn-success" style="background-color: rgb(69, 69, 69)" (click)="modif()">Modifier</button>
+          <button  color="primary" (click)="retour()"  class="btn btn-danger" style="background-color: #8B4043">Retour</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  
+  

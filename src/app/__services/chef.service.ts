@@ -17,7 +17,7 @@ export class ChefService {
    }
 
    addchef(c:Chef):Observable<object>{
-    return this.http.post("http://localhost:8021/chef" ,c ).pipe()
+    return this.http.post("http://localhost:8022/chef" ,c ).pipe()
 
   }
 

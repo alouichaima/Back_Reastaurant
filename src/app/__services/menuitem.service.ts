@@ -8,8 +8,8 @@ import { Category } from '../layouts/admin-layout/category/category';
   providedIn: 'root'
 })
 export class MenuitemService {
-  readonly API_URL = 'http://localhost:8021/api/menuitems'; // Corrected URL
-  readonly API_CAT = 'http://localhost:8021/api/categories'; // Assuming category endpoint URL
+  readonly API_URL = 'http://localhost:8022/api/menuitems'; // Corrected URL
+  readonly API_CAT = 'http://localhost:8022/api/categories'; // Assuming category endpoint URL
   constructor(private httpClient: HttpClient) {}
 
   fetchItemList(): Observable<any> {

@@ -8,7 +8,7 @@ import { Chef } from '../models/chef';
 })
 export class ChefService {
 
-  private baseUrl = 'http://localhost:8021/chef';
+  private baseUrl = 'http://localhost:8022/chef';
   constructor(private http:HttpClient) { }
 
   getAllChef()

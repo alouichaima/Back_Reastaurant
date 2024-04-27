@@ -42,35 +42,10 @@ export class HomeComponent {
 
   }
 
-  /*getAllChef() {
-    this.chefservice.getAllChef().subscribe(res => this.listChef = res)
-  }*/
-
-
-  
-  
-
-  
-
   getallc():void{
 
-    this.servicechef.getAllChef().subscribe({next: (data) => {
-
-    this.list= data;
-
-    console.log(data);
-
-    },
-
-    error: (c) => console.error(c)
-
-    });
-
-      }
-
-  
-
-
-
+    this.servicechef.getAllChef().subscribe({next: (data) => { this.list= data;
+    console.log(data);},
+    error: (c) => console.error(c) }) ;}
 
 }

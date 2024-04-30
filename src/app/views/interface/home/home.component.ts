@@ -19,6 +19,7 @@ export class HomeComponent {
   listchef:any;
   iduser:any;
   idmenuItem:any;
+
   menuItem: MenuItem = {
     id: null,
     name: null,
@@ -47,13 +48,16 @@ export class HomeComponent {
     this.getAllMenuItems();
     this.getallc();
 
-    this.isLoggedIn = !!this.tokenStorageService.getToken();
+    this.isLoggedIn = !!this.tokenStorageService.getTokenn();
     if (this.isLoggedIn) {
       const user = this.tokenStorageService.getUser();
       this.roles = user.roles;
-
+      this.showAdminBoard = this.roles.includes('ADMIN');
+      this.showClientBoard = this.roles.includes('CLIENT');
+      this.showvisiteurBoard = this.roles.includes('visiteur')
     }
-    this.isNotLoggedIn  = !!this.tokenStorageService.getToken();
+
+    this.isNotLoggedIn  = !!this.tokenStorageService.getTokenn();
 
     if (this.isLoggedIn) {
       const user = this.tokenStorageService.getUser();
@@ -61,10 +65,12 @@ export class HomeComponent {
 
     }
 
+
     this.user=this.tokenStorageService.getUser();
       console.log(this.user)
       this.iduser = this.user.id;
       console.log(this.iduser)
+
 
   }
 
@@ -81,16 +87,16 @@ export class HomeComponent {
       this.servicechef.getAllChef().subscribe({next: (data) => { this.listchef= data;
         console.log(data);}, error: (c) => console.error(c) }) ;}
 
-        public passercommande (idmenuItem:any) : void {
+  public passercommande (idmenuItem:any) : void {
           this.servicecommande.passercommande(this.iduser,idmenuItem).subscribe (
             (data) => {
               console.log(this.iduser,idmenuItem);
               console.log(Swal.fire(
                 'Félicitation!',
-                'Commande passer avec success',
+                'Commande passée avec success',
                 'success'
                     )     )   }
           )
-        }
+  }
 
 }

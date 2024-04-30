@@ -177,8 +177,8 @@
                                     </div>
                                     <span class="offer-price">{{item.price}}</span>
                                 </div>
-                                <a class ="passer"  (click)="passercommande(item.id)" >Acheter</a> <br><br>
-                                <a  routerLink="/register" >Créer un compte</a>
+                                <a class ="passer"   (click)="passercommande(item.id)" > Acheter</a> <br><br>
+                                <a class="passer" *ngIf="showvisiteurBoard"  routerLink="/registre" >Créer un compte</a>
                             </div>
                         </div>
                     </div>

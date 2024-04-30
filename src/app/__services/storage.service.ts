@@ -26,7 +26,7 @@ export class StorageService {
     return token ? token : null;
   }
 
-  public getToken(): string |null {
+  public getTokenn(): string |null {
     return sessionStorage.getItem(TOKEN_KEY);
   }
   signOut(): void {

@@ -8,7 +8,7 @@ import { Category } from '../layouts/admin-layout/category/category';
 })
 export class CategoryService {
 
-  readonly API_URL = 'http://localhost:8021/api/categorie';
+  readonly API_URL = 'http://localhost:8022/api/categorie';
   constructor(private httpClient:HttpClient ) { }
 
   getAllCategories(){

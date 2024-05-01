@@ -177,6 +177,8 @@
                                     </div>
                                     <span class="offer-price">{{item.price}}</span>
                                 </div>
+                                <a class ="passer"   (click)="passercommande(item.id)" > Acheter</a> <br><br>
+                                <a class="passer" *ngIf="showvisiteurBoard"  routerLink="/registre" >Créer un compte</a>
                             </div>
                         </div>
                     </div>
@@ -203,7 +205,7 @@
                 <div class="team-box">
 
                     <div class="row" >
-                        <div *ngFor="let chef of list" class="col-md-4 col-sm-6">
+                        <div *ngFor="let chef of listchef" class="col-md-4 col-sm-6">
                             <div class="sf-team">
                                 <div class="thumb">
                                     <a href="#"><img src={{chef.image}} alt=""></a>

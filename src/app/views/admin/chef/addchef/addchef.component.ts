@@ -11,8 +11,8 @@ export class AddchefComponent implements OnInit {
   url:any ="";
 
 
-  coa: any={'nomPrenom':'','description':'','typeC':'','image':'','facebook':'','instagram':''};
-  constructor( private service:ChefService, private router:Router)
+  coa: any={'nomPrenom':'','description':'', 'image':"",'typeC':"",'facebook':"",'instagram':""};
+  constructor( private servicechef:ChefService, private router:Router)
   { }
 
   ngOnInit(): void {
@@ -20,7 +20,7 @@ export class AddchefComponent implements OnInit {
 
   add(){
     console.log(this.coa);
-    this.service.addchef(this.coa).subscribe({
+    this.servicechef.addchef(this.coa).subscribe({
 
        next: (data:any)=>{
          this.router.navigate (['admin/listechef'])
@@ -35,6 +35,7 @@ export class AddchefComponent implements OnInit {
 
 
 }
+
 
 
 }

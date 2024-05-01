@@ -36,6 +36,11 @@ const routes: Routes = [
     {path:'menu',component: FoodmenuComponent },
     //{path:'addCategory',component:AddCategoryComponent},
     //{path:'update-categorie/:id', component: UpdateCategoryComponent },
+    {path:'listechef', loadChildren:()=>import('./views/admin/chef/listechef/listechef.module').then(m=>m.ListechefModule)},
+    {path:'editchef', loadChildren:()=>import('./views/admin/chef/editchef/editchef.module').then(m=>m.EditchefModule)},
+    {path:'addchef', loadChildren:()=>import('./views/admin/chef/addchef/addchef.module').then(m=>m.AddchefModule)},
+
+
     
 
   ]},

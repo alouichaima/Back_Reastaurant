@@ -3,9 +3,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { StorageService } from './storage.service';
 
-const API_URL = 'http://localhost:8021/api/test/';
-const API_URLW = 'http://localhost:8021/api/wishlist/';
 
+const API_URLW = 'http://localhost:8022/api/wishlist/';
+
+const API_URL = 'http://localhost:8022/api/test/';
 
 @Injectable({
   providedIn: 'root',
@@ -33,7 +34,7 @@ export class UserService {
     let h = new HttpHeaders().set('Authorization', 'bearer ' + JSON.parse(localStorage.getItem('auth-user'))['accessToken']);
     console.log(h, wishlistDto);
 
-    return this.http.post('http://localhost:8021/api/wishlist/avis',wishlistDto,{
+    return this.http.post('http://localhost:8022/api/wishlist/avis',wishlistDto,{
      // headers:this.createAuthorizationHeader()
      headers : h
 

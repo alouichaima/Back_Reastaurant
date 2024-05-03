@@ -20,20 +20,12 @@ export class ListechefComponent implements OnInit {
 
   getallc():void{
 
-    this.servicechef.getAllChef().subscribe({next: (data) => {
-
-    this.list= data;
-
-    console.log(data);
-
-    },
-
-    error: (c) => console.error(c)
-
-    });
-
-      }
-      deleteChef(id:number){
+    this.servicechef.getAllChef().subscribe({next: (data) => { this.list= data;
+    console.log(data); }, error: (c) => console.error(c) }); 
+  
+  }
+  
+  deleteChef(id:number){
         this.servicechef. supprimer(id)
           .subscribe(data => {
             this.deleteChef=data;
@@ -42,7 +34,8 @@ export class ListechefComponent implements OnInit {
             error => console.log(error));
 
       }
-      update(coa:any){
+      
+  update(coa:any){
         this.router.navigate(['admin/editchef' ,coa]);
         let navigationExtras:NavigationExtras={
 

@@ -11,7 +11,7 @@ import { MenuData } from '../models/menu-data.model';
 })
 export class MenuService {
 
-  readonly API_URL = 'http://localhost:8021/api/menu';
+  readonly API_URL = 'http://localhost:8022/api/menu';
   constructor(private httpClient:HttpClient ) { }
 
   getMenu(){

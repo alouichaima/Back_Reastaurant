@@ -3,13 +3,13 @@ import { Injectable } from '@angular/core';
 import { StorageService } from './storage.service';
 
 
-const BASIC_URL = "http://localhost:8021";
+const BASIC_URL = "http://localhost:8022";
 
 @Injectable({
   providedIn: 'root'
 })
 export class GetcategorieService {
-  readonly API_URL = 'http://localhost:8021/api/categorie';
+  readonly API_URL = 'http://localhost:8022/api/categorie';
   constructor(private http:HttpClient) { }
   
   getAllCategories(){

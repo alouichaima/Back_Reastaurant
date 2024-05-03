@@ -25,6 +25,10 @@ export class StorageService {
     const token = localStorage.getItem(TOKEN_KEY);
     return token ? token : null;
   }
+
+  public getTokenn(): string |null {
+    return sessionStorage.getItem(TOKEN_KEY);
+  }
   signOut(): void {
     localStorage.clear();
   }

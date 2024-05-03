@@ -9,6 +9,8 @@ import { StorageService } from 'src/app/__services/storage.service';
 import { MenuItem } from 'src/app/models/menu-item';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { CommandeService } from 'src/app/__services/commande.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +20,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class HomeComponent {
   listCategories:any;
   listMenuItems:any;
-  list:any;  // listMenuItems: MenuItem[] = [];
+  listchef:any;
+  iduser:any;
+  idmenuItem:any;
+
   menuItem: MenuItem = {
     id: null,
     name: null,
@@ -28,16 +33,27 @@ export class HomeComponent {
 
 
 menuItemId:number;//=this.route.snapshot.params["menuItemId"];
+  user:any;
+  private roles : string[] = [];
+  isLoggedIn = false;
+  isNotLoggedIn =false;
+  showAdminBoard = false;
+  showClientBoard = false;
+  showvisiteurBoard = true;
   showAddMenuItemForm: boolean = false;
 
   constructor(
     private menuItemService: MenuitemService,
     private categoryService:CategoryService,
-    private servicechef:ChefService, private router:Router,
+    private servicechef:ChefService,
     private UserService :UserService,
     private route:ActivatedRoute,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private servicecommande:CommandeService,
+    private tokenStorageService: StorageService,
+    private router:Router
   ) { }
+
 
   ngOnInit(): void {
     this.menuItemId=this.route.snapshot.params["menuItemId"];
@@ -47,7 +63,32 @@ menuItemId:number;//=this.route.snapshot.params["menuItemId"];
     this.getAllMenuItems();
     this.getallc();
 
+    this.isLoggedIn = !!this.tokenStorageService.getTokenn();
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+      this.showAdminBoard = this.roles.includes('ADMIN');
+      this.showClientBoard = this.roles.includes('CLIENT');
+      this.showvisiteurBoard = this.roles.includes('visiteur')
+    }
+
+    this.isNotLoggedIn  = !!this.tokenStorageService.getTokenn();
+
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.showvisiteurBoard = this.roles.includes('visiteur')
+
+    }
+
+
+    this.user=this.tokenStorageService.getUser();
+      console.log(this.user)
+      this.iduser = this.user.id;
+      console.log(this.iduser)
+
+
   }
+
   getAllCategories(){
     this.categoryService.getCategories().subscribe(res => this.listCategories = res)
   }
@@ -60,7 +101,17 @@ menuItemId:number;//=this.route.snapshot.params["menuItemId"];
   /*getAllChef() {
     this.chefservice.getAllChef().subscribe(res => this.listChef = res)
   }*/
-
+  public passercommande (idmenuItem:any) : void {
+    this.servicecommande.passercommande(this.iduser,idmenuItem).subscribe (
+      (data) => {
+        console.log(this.iduser,idmenuItem);
+        console.log(Swal.fire(
+          'Félicitation!',
+          'Commande passée avec success',
+          'success'
+              )     )   }
+    )
+}
 
 
 
@@ -68,6 +119,8 @@ menuItemId:number;//=this.route.snapshot.params["menuItemId"];
 
 
   getallc():void{
+      this.servicechef.getAllChef().subscribe({next: (data) => { this.listchef= data;
+        console.log(data);}, error: (c) => console.error(c) }) ;}
 
     this.servicechef.getAllChef().subscribe({next: (data) => {
 
@@ -81,7 +134,8 @@ menuItemId:number;//=this.route.snapshot.params["menuItemId"];
 
     });
 
-      }
+
+
 
 http = inject(HttpClient);
 
@@ -96,6 +150,7 @@ http = inject(HttpClient);
 
         // Récupérer le jeton d'authentification depuis le stockage local
         const accessToken = JSON.parse(localStorage.getItem('auth-user'))['accessToken'];
+
 
         // Créer les en-têtes HTTP avec le jeton d'authentification
         let headers = new HttpHeaders().set('Authorization', 'bearer ' + accessToken);
@@ -127,4 +182,4 @@ http = inject(HttpClient);
           }
         );
       }
-    }
+

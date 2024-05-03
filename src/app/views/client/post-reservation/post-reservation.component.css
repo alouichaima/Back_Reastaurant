@@ -3,3 +3,42 @@
   background-color: #43a047; /* Green color for success */
   color: #fff; /* White text */
 }
+/* Container */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Utilise toute la hauteur de la vue */
+}
+
+/* Formulaire */
+form {
+  width: 125%; /* Ajustez la largeur du formulaire selon vos besoins */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombre douce */
+}
+
+/* Header */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Form Fields */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical; /* Autoriser le redimensionnement vertical */
+}
+
+/* Bouton de soumission */
+button {
+  display: block;
+  margin: 0 auto;
+}

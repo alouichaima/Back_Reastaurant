@@ -21,7 +21,7 @@ export class MenuitemService {
   getAllMenuItems(){
     return this.httpClient.get(`${this.API_URL}/all-items`)
   }
-  
+
 
   addMenuItem(menuItem: MenuItem): Observable<MenuItem> {
     return this.httpClient.post<MenuItem>(`${this.API_URL}/additem`, menuItem);
@@ -41,5 +41,5 @@ export class MenuitemService {
     return this.httpClient.get<Category[]>(this.API_CAT);
   }
 
-  
+
 }

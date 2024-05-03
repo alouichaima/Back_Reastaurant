@@ -15,3 +15,31 @@
 .mat-button:hover {
   opacity: 0.8;
 }
+/* Alignement du tableau au centre */
+.mat-table {
+  margin: auto;
+}
+
+/* Espacement entre les lignes */
+.mat-row {
+  margin-bottom: 10px;
+}
+
+/* Style pour les boutons d'action */
+.approve-button, .disapprove-button {
+  margin-right: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.approve-button {
+  background-color: green;
+  color: white;
+}
+
+.disapprove-button {
+  background-color: red;
+  color: white;
+}

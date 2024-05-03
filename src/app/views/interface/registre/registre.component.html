@@ -95,13 +95,14 @@
         <div class="form-group">
           <button class="btn btn-primary btn-block">Sign Up</button>
         </div>
-  
+
         <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
           Signup failed!<br />{{ errorMessage }}
         </div>
+        <p>Vous avez déja compte <a href="/login">Login</a></p>
+
       </form>
-  
+
       <div class="alert alert-success" *ngIf="isSuccessful">
         Your registration is successful!
       </div>
-  

@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { StorageService } from './storage.service';
 
 const API_URL = 'http://localhost:8021/api/test/';
+const API_URLW = 'http://localhost:8021/api/wishlist/';
+
 
 @Injectable({
   providedIn: 'root',
@@ -19,14 +21,31 @@ export class UserService {
     return this.http.get(API_URL + 'user', { responseType: 'text' });
   }
 
-  getModeratorBoard(): Observable<any> {
-    return this.http.get(API_URL + 'mod', { responseType: 'text' });
-  }
+
 
   getAdminBoard(): Observable<any> {
     return this.http.get(API_URL + 'admin', { responseType: 'text' });
   }
 
-  
+  addMenuItemToWishlist(wishlistDto:any):Observable<any>{
+    console.log(JSON.parse(localStorage.getItem('auth-user'))['accessToken']);
+
+    let h = new HttpHeaders().set('Authorization', 'bearer ' + JSON.parse(localStorage.getItem('auth-user'))['accessToken']);
+    console.log(h, wishlistDto);
+
+    return this.http.post('http://localhost:8021/api/wishlist/avis',wishlistDto,{
+     // headers:this.createAuthorizationHeader()
+     headers : h
+
+    })
+  }
+  createAuthorizationHeader():HttpHeaders{
+    let authHeaders:HttpHeaders = new HttpHeaders();
+    return authHeaders.set(
+      "Authorization", "Bearer " + StorageService.getToken()
+    );
+  }
+
+
 
 }

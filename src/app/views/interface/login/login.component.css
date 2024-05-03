@@ -7,8 +7,8 @@
     animation: zoom-out 3s linear infinite;
     background-size: cover;
     border-bottom:2px solid transparent;
-    
-    
+
+
    }
 
    @keyframes zoom-out {
@@ -45,7 +45,7 @@
    -webkit-border-radius: 6px;
    text-align: center;
    border-radius: 20px;
-   margin-top: 8cm;
+   margin-top: 6cm;
    margin-left: 12cm;
 
 }
@@ -144,10 +144,12 @@
   letter-spacing: 1px;
   transition: background-color 0.5s ease;
   margin-left: 3cm;}
-  
+
 
   .mot{
     color: #f44336;
     font-family: 'Akronim', cursive;
     font-size: 1.5cm;
   }
+
+

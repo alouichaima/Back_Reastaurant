@@ -176,6 +176,9 @@
                                         </p>
                                     </div>
                                     <span class="offer-price">{{item.price}}</span>
+                                    <mat-icon class="heart-icon" (click)="addtowishList(item.id)" style="cursor: pointer;margin-top: 10px;">
+                                      Favorite_border
+                                    </mat-icon>
                                 </div>
                             </div>
                         </div>
@@ -220,8 +223,8 @@
                             </div>
                         </div>
                         <!-- end col -->
-                        
-                        
+
+
                         <!-- end col -->
                     </div>
                     <!-- end row -->

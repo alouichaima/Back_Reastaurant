@@ -176,10 +176,12 @@
                                         </p>
                                     </div>
                                     <span class="offer-price">{{item.price}}</span>
-                                    <mat-icon class="heart-icon" (click)="addtowishList(item.id)" style="cursor: pointer;margin-top: 10px;">
-                                      Favorite_border
-                                    </mat-icon>
+
+
                                 </div>
+                                <mat-icon class="heart-icon" (click)="addtowishList(item.id)" style="cursor: pointer; margin-top: 10px;">
+                                  favorite_border 
+                              </mat-icon><br>
                                 <a class ="passer"   (click)="passercommande(item.id)" > Acheter</a> <br><br>
                                 <a class="passer" *ngIf="showvisiteurBoard"  routerLink="/registre" >Créer un compte</a>
                             </div>

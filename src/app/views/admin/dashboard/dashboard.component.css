@@ -31,7 +31,7 @@ nav ul li a {
 }
 
 .main {
-  flex-grow: 1;
+  flex-grow: 2;
   padding: 20px;
 }
 
@@ -46,18 +46,18 @@ nav ul li a {
 }
 
 .square {
-  background-color: #fff; 
+  background-color: #fff;
   border: 1px solid #ccc;
   padding: 40px; /* Adjust padding to make the content area bigger */
   margin-bottom: 40px; /* Increase margin to create more space between squares */
   width: calc(50% - 80px); /* Adjust width to account for increased padding */
-  height: 200px; /* Increase height to make the square taller */
+  height: 150px; /* Increase height to make the square taller */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 10px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .fa-icon {
@@ -69,7 +69,7 @@ nav ul li a {
   margin-top: 10px;
 }
 .square p {
-  font-size: 36px; 
+  font-size: 36px;
 }
 
 

@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AddchefRoutingModule } from './addchef-routing.module';
 import { AddchefComponent } from './addchef.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +13,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     AddchefRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
 
   ]
 })

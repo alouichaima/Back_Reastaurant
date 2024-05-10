@@ -1,4 +1,4 @@
-<div class="row">
+<!-- <div class="row">
     <div class="col-md-12">
         <div class="card text-center">
             <div class="col-md-12">
@@ -16,12 +16,12 @@
                         <th>Instgram</th>
                         <th>image</th>
                         <th>Actions</th>
-                     
+
                     </tr>
                 </thead>
-                
+
                 <tbody>
-                  
+
                     <tr *ngFor="let chef of list">
                         <td>{{chef.id}}</td>
                         <td> {{chef.nomPrenom}}</td>
@@ -31,15 +31,56 @@
                         <td>{{chef.instagram}}</td>
                         <td><img style="width: 2cm; height: 2cm;" src={{chef.image}}></td>
                         <td>
-                            <div>
-                                <li ><button class="text-info" data-toggle="tooltip" title=""  data-original-title="Edit" (click)="update(chef)"><i  class="fas fa-pencil-alt"></i></button></li>&nbsp;&nbsp;&nbsp;
-                            <li ><button  class="text-danger" data-toggle="tooltip" title="" data-original-title="Delete" (click)="deleteChef(chef.id)"><i class="far fa-trash-alt"></i></button></li>
-                        
-                            </div>
+
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
-</div>
+</div> -->
+
+<section class="main">
+  <div class="row">
+      <div class="col-md-12">
+          <div class="card text-center">
+              <div class="col-md-12">
+                  <button mat-raised-button style="margin: 60px;" color="primary" (click)="openAddChefForm()">Add Chef</button>
+              </div>
+              <table class="table">
+                  <thead>
+                      <tr>
+                          <th>Full Name</th>
+                          <th>Description</th>
+                          <th>Facebook</th>
+                          <th>Instgram</th>
+                          <th>image</th>
+                          <th>Actions</th>
+
+                      </tr>
+                  </thead>
+
+                  <tbody>
+
+                      <tr *ngFor="let chef of listChef">
+                          <td>{{chef.nomPrenom}}</td>
+                          <td>{{chef.description}}</td>
+                          <td><img style="width: 2cm; height: 2cm;" src={{chef.image}}></td>
+                          <td>{{chef.facebook}}</td>
+                          <td>{{chef.instagram}}</td>
+
+
+                          <td>
+                              <div>
+                                  <button type="button" mat-raised-button color="primary" (click)="openUpdateChefDialog(chef.id,chef)">Update</button> |
+                                  <button type="button" mat-raised-button color="accent" (click)="deleteChefById(chef.id)">Delete</button>
+                              </div>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+  </section>
+

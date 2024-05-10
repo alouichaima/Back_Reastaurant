@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, Inject, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ChefService } from 'src/app/__services/chef.service';
+import { Chef } from 'src/app/models/chef';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-editchef',
@@ -8,46 +11,61 @@ import { ChefService } from 'src/app/__services/chef.service';
   styleUrls: ['./editchef.component.css']
 })
 export class EditchefComponent implements OnInit {
-  id:number =0;
-  coa:any={'nomPrenom':'','description':'','typeC':'','image':'','facebook':'','instagram':''};
+  @Input() id!: number;
+  chef!: Chef;
+  updateForm!: FormGroup;
 
-  constructor(private service:ChefService, private router:Router ,private route: ActivatedRoute ) {
-    this.route.queryParams.subscribe(params=>{
-      if (params && params['special']) {
-        this.coa = JSON.parse(params['special']);
-      }
-      
 
-      })
-   }
+  constructor(
+    private dialogRef: MatDialogRef<EditchefComponent>,
+    @Inject(MAT_DIALOG_DATA) private data: any,
+    private chefservice:ChefService,
+        private fb: FormBuilder
+  ) { }
+
   ngOnInit(): void {
-
-
-  }
-  onSubmit(){
-
+    this.chef = this.data.chef;
+    this.initializeForm();
   }
 
-  retour():void{
+  initializeForm(): void {
+    this.updateForm = this.fb.group({
+      nomPrenom: [this.chef?.nomPrenom || '', Validators.required],
+      description: [this.chef?.description|| '', Validators.required],
+      image: [this.chef?.image || '', Validators.required],
+      facebook: [this.chef?.facebook || '', Validators.required],
+      instagram: [this.chef?.instagram || '', Validators.required],
 
-    this.router.navigate(['admin/listechef']);
-
+    });
   }
-  modif():void{
-    this.service.update(this.coa).subscribe({
 
-      next: (data:any)=>{
-        this.router.navigate (['admin/listechef'])
+  updateChef(id: number) {
+    if (this.updateForm.valid) {
+      const updatedchef: Chef = this.updateForm.value;
+      this.chefservice.updateChef(id, updatedchef).subscribe(() => {
+        Swal.fire({
+          title: 'Success!',
+          text: 'Chef updated successfully!',
+          icon: 'success',
+          timer: 1500,
+          timerProgressBar: true
+        });
+        this.dialogRef.close('Close');
+      }, error => {
+        console.error('Error updating Chef:', error);
+        Swal.fire({
+          title: 'Error!',
+          text: 'Failed to update Chef.',
+          icon: 'error',
+          timer: 1500,
+          timerProgressBar: true
+        });
+      });
+    } else {
+      console.error('Chef ID or object is undefined');
+    }}
 
-     },
 
-     error: (c:any)=> console.error(c),
-
-     complete:()=>{}
-
-     })
-
-  }
 
 
 }

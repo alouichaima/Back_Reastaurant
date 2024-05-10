@@ -9,31 +9,29 @@ import { Chef } from '../models/chef';
 export class ChefService {
 
   private baseUrl = 'http://localhost:8022/chef';
-  constructor(private http:HttpClient) { }
+  constructor(private httpClient:HttpClient) { }
 
-  getAllChef()
-   {
-     return this.http.get(this.baseUrl + '/all');
-   }
-
-   addchef(c:Chef):Observable<object>{
-    return this.http.post("http://localhost:8022/chef" ,c ).pipe()
-
+  getAllChef(){
+    return this.httpClient.get(`${this.baseUrl}/all`)
   }
 
-  getChefById(id: number): Observable<any>
-  {
-    return this.http.get(this.baseUrl +"/"+ id);
+  addChef(c:any):Observable<any>{
+    return this.httpClient.post(`${this.baseUrl}/addChef`, c)
   }
 
-  supprimer(id: number): Observable<any>
-  {
-    return this.http.delete(this.baseUrl +  "/" +id, { responseType: 'text' });
+  deleteChefById( id: any){
+    return  this.httpClient.delete(`${this.baseUrl}/${id}`)
   }
-   update(cef:Chef): any
-   {
-     return this.http.put(this.baseUrl ,cef).pipe();
-   }
 
-   
+  // Inside PubService
+  updateChef(id: any, chefDetails: Chef): Observable<any> {
+  return this.httpClient.put(`${this.baseUrl}/updateChef/${id}`, chefDetails);
+}
+
+getChef(): Observable<Chef[]> {
+  return this.httpClient.get<Chef[]>(this.baseUrl);
+}
+
+
+
 }

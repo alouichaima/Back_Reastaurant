@@ -14,6 +14,8 @@ export class DashboardComponent {
   availableTables: number = 0;
   NBRDis:any;
   NBRAPPR:any;
+  NBRPEN:any;
+
 
   constructor(private dashboardService: DashboardServiceService) { }
 
@@ -31,5 +33,9 @@ export class DashboardComponent {
     this.dashboardService
     .CountAPPROVEDReservations()
     .subscribe((data) => (this.NBRAPPR= data));
+
+    this.dashboardService
+    .CountPendingReservations()
+    .subscribe((data) => (this.NBRPEN= data));
   }
 }

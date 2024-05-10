@@ -15,7 +15,7 @@ import { Menu } from 'src/app/models/menu';
 })
 export class CategoryComponent implements OnInit{
 
-  
+
   listCategories:any;
   category!:Category;
   showAddCategoryForm:boolean=false;
@@ -37,7 +37,7 @@ export class CategoryComponent implements OnInit{
   addCategorie(categorie:any){
     this.categoryService.addCategorie(categorie).subscribe(() => {
       this.getAllCategories();
-      
+
     });
   }
 
@@ -78,7 +78,7 @@ export class CategoryComponent implements OnInit{
   openAddCategory(){
     this.matdialog.open(AddCategoryComponent);
   }
-  
-  
+
+
 
 }

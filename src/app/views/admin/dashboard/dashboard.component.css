@@ -71,6 +71,13 @@ nav ul li a {
 .square p {
   font-size: 36px;
 }
-
+.pending-icon {
+  font-size: 20px; /* Taille de l'icône */
+  color: #060303; /* Couleur de l'icône (gris clair dans cet exemple) */
+}
+.disapprove-icon {
+  font-size: 20px; /* Taille de l'icône */
+  color: #ff6347; /* Couleur de l'icône pour indiquer la désapprobation (rouge vif dans cet exemple) */
+}
 
 

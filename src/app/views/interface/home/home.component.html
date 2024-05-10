@@ -180,10 +180,10 @@
 
                                 </div>
                                 <mat-icon class="heart-icon" (click)="addtowishList(item.id)" style="cursor: pointer; margin-top: 10px;">
-                                  favorite_border 
+                                  favorite_border
                               </mat-icon><br>
                                 <a class ="passer"   (click)="passercommande(item.id)" > Acheter</a> <br><br>
-                                <a class="passer" *ngIf="showvisiteurBoard"  routerLink="/registre" >Créer un compte</a>
+                                <!-- <a class="passer" *ngIf="showvisiteurBoard"  routerLink="/registre" >Créer un compte</a> -->
                             </div>
                         </div>
                     </div>
@@ -210,7 +210,7 @@
                 <div class="team-box">
 
                     <div class="row" >
-                        <div *ngFor="let chef of listchef" class="col-md-4 col-sm-6">
+                        <div *ngFor="let chef of listChef" class="col-md-4 col-sm-6">
                             <div class="sf-team">
                                 <div class="thumb">
                                     <a href="#"><img src={{chef.image}} alt=""></a>

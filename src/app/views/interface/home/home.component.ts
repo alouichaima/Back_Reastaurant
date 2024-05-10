@@ -9,6 +9,8 @@ import { StorageService } from 'src/app/__services/storage.service';
 import Swal from 'sweetalert2';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Observable } from 'rxjs';
+import { Chef } from 'src/app/models/chef';
 
 @Component({
   selector: 'app-home',
@@ -16,11 +18,14 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+
   listCategories:any;
   listMenuItems:any;
-  listchef:any;
+  listChef:any;
   iduser:any;
   idmenuItem:any;
+  chef!:Chef;
+
 
   menuItem: MenuItem = {
     id: null,
@@ -45,11 +50,20 @@ export class HomeComponent {
     private servicecommande:CommandeService,
     private tokenStorageService: StorageService,
     private snackBar: MatSnackBar,
-    private router:Router ) { }
+    private http: HttpClient ) { }
 
   ngOnInit(): void {
     this.getAllMenuItems();
-    this.getallc();
+    this.getAllChef();
+    this.chef={
+      id:null,
+      nomPrenom:null,
+      description:null,
+      image : null,
+      facebook:null,
+      instagram:null
+
+    }
 
     this.isLoggedIn = !!this.tokenStorageService.getTokenn();
     if (this.isLoggedIn) {
@@ -77,6 +91,10 @@ export class HomeComponent {
 
   }
 
+  getAllChef(){
+    this.servicechef.getAllChef().subscribe(res => this.listChef = res)
+  }
+
   getAllCategories(){
     this.categoryService.getCategories().subscribe(res => this.listCategories = res)
   }
@@ -86,9 +104,7 @@ export class HomeComponent {
 
   }
 
-  getallc():void{
-      this.servicechef.getAllChef().subscribe({next: (data) => { this.listchef= data;
-        console.log(data);}, error: (c) => console.error(c) }) ;}
+
 
   public passercommande (idmenuItem:any) : void {
           this.servicecommande.passercommande(this.iduser,idmenuItem).subscribe (
@@ -102,13 +118,13 @@ export class HomeComponent {
           )
   }
 
-http = inject(HttpClient);
+// http = inject(HttpClient);
 
 addtowishList(id: any) {
   console.log('Adding to wishlist:', { menuItemId: id, userId: this.iduser });
 
   const wishlistDto = {
-    menuItem_id: id, 
+    menuItem_id: id,
     userId: this.iduser
   };
 

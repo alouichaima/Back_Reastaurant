@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { MenuItem } from '../models/menu-item';
 import { Category } from '../layouts/admin-layout/category/category';
 import { StorageService } from './storage.service';
@@ -53,10 +53,24 @@ export class MenuitemService {
     return this.httpClient.get<Category[]>(this.API_CAT);
   }
 
+
   private createAuthorizationHeader(): HttpHeaders {
     let authHeaders: HttpHeaders = new HttpHeaders();
     return authHeaders.set(
       "Authorization", "Bearer " + StorageService.getToken()
     );
   }
+
+  getMenuItem(): Observable<any[]> {
+    return this.httpClient.get(`${this.API_URL}/all-items`, { responseType: 'text' }).pipe(
+      map((response: string) => {
+        const lines = response.split('\n');
+        const items = lines.filter(line => line.trim() !== '');
+        const parsedItems = items.map(item => JSON.parse(item));
+        return parsedItems;
+      })
+    );
+  }
+  
+
 }

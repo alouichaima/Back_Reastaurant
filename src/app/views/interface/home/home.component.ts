@@ -1,16 +1,18 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+
 import { CategoryService } from 'src/app/__services/category.service';
 import { ChefService } from 'src/app/__services/chef.service';
 import { MenuitemService } from 'src/app/__services/menuitem.service';
 import { MenuItem } from 'src/app/models/menu-item';
-
+import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  
   listCategories:any;
   listMenuItems:any;
   list:any;  // listMenuItems: MenuItem[] = [];
@@ -26,7 +28,8 @@ export class HomeComponent {
   constructor(
     private menuItemService: MenuitemService,
     private categoryService:CategoryService,
-    private servicechef:ChefService, private router:Router ) { }
+    private servicechef:ChefService, private router:Router ,
+    private snackBar: MatSnackBar ) { }
 
   ngOnInit(): void {
     this.getAllMenuItems();
@@ -45,6 +48,11 @@ export class HomeComponent {
   /*getAllChef() {
     this.chefservice.getAllChef().subscribe(res => this.listChef = res)
   }*/
+  addToCart(id:any){
+    this.menuItemService.addToCart(id).subscribe(res=>{
+      this.snackBar.open("menuItem added to cart successfully","close",{duration:5000})
+    })
+  }
 
 
   

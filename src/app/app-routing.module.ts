@@ -16,6 +16,8 @@ const routes: Routes = [
   {path:'',component:TemplateLayoutComponent,children:[
     {path:'',loadChildren:()=>import('./views/interface/home/home.module').then(m=>m.HomeModule)},
     {path:'categorieC',loadChildren:()=>import('./views/interface/get_categorie/getcategorie/getcategorie.module').then(m=>m.GetcategorieModule)},
+  
+    {path:'menuList',loadChildren:()=>import('./views/interface/menu-list/menu-list.module').then(m=>m.MenuListModule)},
   ]},
   {path:'login',loadChildren:()=>import('./views/interface/login/login.module').then(m=>m.LoginModule)},
   {path:'registre',loadChildren:()=>import('./views/interface/registre/registre.module').then(m=>m.RegistreModule)},

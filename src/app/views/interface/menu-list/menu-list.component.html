@@ -1,0 +1,65 @@
+<div id="menu" class="menu-main pad-top-100 pad-bottom-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
+                    <h2 class="block-title text-center">
+Our Menu
+</h2>
+              <p class="title-caption text-center">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. </p>
+          </div>
+          <div class="tab-menu">
+              <div class="slider slider-nav">
+                <div class="row">
+                <div class="col-md-4 col-sm-6">
+                  <div class="tab-title-menu">
+                      <h2>STARTERS</h2>
+                      <p> <i class="flaticon-canape"></i> </p>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                  <div class="tab-title-menu">
+                      <h2>MAIN DISHES</h2>
+                      <p> <i class="flaticon-dinner"></i> </p>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                  <div class="tab-title-menu">
+                      <h2>DESERTS</h2>
+                      <p> <i class="flaticon-desert"></i> </p>
+                  </div>
+                  </div>
+
+                </div>
+              </div>
+              <div class="slider slider-single">
+                  <div *ngFor="let item of listMenuItems">
+                      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ">
+                          <div class="offer-item" >
+                              <img src="assets/template/images/menu-item-thumbnail-01.jpg" alt="" class="img-responsive">
+                              <div>
+                                  <h3>{{item.name}}</h3>
+                                  <p>
+                                      {{item.description}}
+                                  </p>
+                              </div>
+                              <span class="offer-price">{{item.price}}</span>
+                              <div class="actions">
+                                  <button mat-raised-button color="primary" class="update-button">Add to cart</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              
+             
+            
+          <!-- end tab-menu -->
+      </div>
+      <!-- end col -->
+  </div>
+  <!-- end row -->
+</div>
+<!-- end container -->
+</div>
+end menu

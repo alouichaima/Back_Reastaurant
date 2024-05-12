@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
@@ -14,6 +15,11 @@ export class EditchefComponent implements OnInit {
   @Input() id!: number;
   chef!: Chef;
   updateForm!: FormGroup;
+  idchef:any
+  OneUser:any=[]
+  messageSuccess: any;
+  messageError: any;
+  image: any;
 
 
   constructor(
@@ -65,7 +71,8 @@ export class EditchefComponent implements OnInit {
       console.error('Chef ID or object is undefined');
     }}
 
-
-
+   
+  
+    
 
 }

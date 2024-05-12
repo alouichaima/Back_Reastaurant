@@ -32,6 +32,12 @@ getChef(): Observable<Chef[]> {
   return this.httpClient.get<Chef[]>(this.baseUrl);
 }
 
+ModifierPhoto(idchef: any, file: any) {
+  return this.httpClient.put(
+    'http://localhost:9000/chef/ModifierPhoto/' + idchef,
+    file
+  );
+}
 
 
 }

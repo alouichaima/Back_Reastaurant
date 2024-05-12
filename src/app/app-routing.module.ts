@@ -56,6 +56,7 @@ const routes: Routes = [
 
     {path:'monprofil', loadChildren:()=>import('./views/client/monprofil/monprofil/monprofil.module').then(m=>m.MonprofilModule)},
     {path:'editprofil', loadChildren:()=>import('./views/client/monprofil/editmonprofil/editmonprofil.module').then(m=>m.EditmonprofilModule)},
+    {path:'mescommandes', loadChildren:()=>import('./views/client/monprofil/mescommandes/mescommandes.module').then(m=>m.MescommandesModule)},
 
 
   ]}

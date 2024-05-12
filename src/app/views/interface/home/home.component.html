@@ -176,10 +176,20 @@
                                         </p>
                                     </div>
                                     <span class="offer-price">{{item.price}}</span>
+<<<<<<< HEAD
                                     <div class="actions">
                                         <button mat-raised-button color="primary" class="update-button" (click)="addToCart(item.id)">Add to cart</button>
                                     </div>
+=======
+
+
+>>>>>>> ed32f65dbefb0a511da665e34d970dea1a087537
                                 </div>
+                                <mat-icon class="heart-icon" (click)="addtowishList(item.id)" style="cursor: pointer; margin-top: 10px;">
+                                  favorite_border
+                              </mat-icon><br>
+                                <a class ="passer"   (click)="passercommande(item.id)" > Acheter</a> <br><br>
+                                <!-- <a class="passer" *ngIf="showvisiteurBoard"  routerLink="/registre" >Créer un compte</a> -->
                             </div>
                         </div>
                     </div>
@@ -209,7 +219,7 @@
                 <div class="team-box">
 
                     <div class="row" >
-                        <div *ngFor="let chef of list" class="col-md-4 col-sm-6">
+                        <div *ngFor="let chef of listChef" class="col-md-4 col-sm-6">
                             <div class="sf-team">
                                 <div class="thumb">
                                     <a href="#"><img src={{chef.image}} alt=""></a>
@@ -226,8 +236,8 @@
                             </div>
                         </div>
                         <!-- end col -->
-                        
-                        
+
+
                         <!-- end col -->
                     </div>
                     <!-- end row -->

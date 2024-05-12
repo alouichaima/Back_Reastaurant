@@ -1,4 +1,20 @@
 
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(2, auto); /* Crée deux colonnes de largeur automatique */
+  grid-column-gap: 10px; /* Ajoute un espace entre les boutons */
+}
+
+.mat-elevation-z8 {
+margin-top: 5cm;
+margin-left: 3cm;
+
+}
+.mdc-data-table__header-cell{
+  padding: 0 0px 0 
+}
+
+
 .mat-button {
   margin-left: 10px;
 }
@@ -14,4 +30,32 @@
 }
 .mat-button:hover {
   opacity: 0.8;
+}
+/* Alignement du tableau au centre */
+.mat-table {
+  margin: auto;
+}
+
+/* Espacement entre les lignes */
+.mat-row {
+  margin-bottom: 10px;
+}
+
+/* Style pour les boutons d'action */
+.approve-button, .disapprove-button {
+  margin-right: 10px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.approve-button {
+  background-color: green;
+  color: white;
+}
+
+.disapprove-button {
+  background-color: red;
+  color: white;
 }

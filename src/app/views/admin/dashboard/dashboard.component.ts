@@ -12,6 +12,10 @@ export class DashboardComponent {
   bestSeller: any = "";
   commandsPassed: number = 0;
   availableTables: number = 0;
+  NBRDis:any;
+  NBRAPPR:any;
+  NBRPEN:any;
+
 
   constructor(private dashboardService: DashboardServiceService) { }
 
@@ -19,7 +23,19 @@ export class DashboardComponent {
     this.dashboardService.getDashboardStats().subscribe(stats => {
       this.totalMenuItems = stats.totalMenuItems;
       this.totalReservations = stats.totalReservations;
-      
+
     });
+
+    this.dashboardService
+    .CountDISAPPROVEReservations()
+    .subscribe((data) => (this.NBRDis= data));
+
+    this.dashboardService
+    .CountAPPROVEDReservations()
+    .subscribe((data) => (this.NBRAPPR= data));
+
+    this.dashboardService
+    .CountPendingReservations()
+    .subscribe((data) => (this.NBRPEN= data));
   }
 }

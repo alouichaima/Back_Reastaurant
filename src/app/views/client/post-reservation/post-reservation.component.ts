@@ -58,8 +58,10 @@ export class PostReservationComponent  {
     this.validateForm = this.fb.group({
       tableType: [null, Validators.required],
       dateTime: [null, Validators.required],
+      time: [null, Validators.required],
       description: [null, Validators.required],
     });
+
   }
 
 

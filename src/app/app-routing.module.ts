@@ -38,9 +38,9 @@ const routes: Routes = [
     {path:'menu',component: FoodmenuComponent },
     //{path:'addCategory',component:AddCategoryComponent},
     //{path:'update-categorie/:id', component: UpdateCategoryComponent },
-    {path:'listechef', loadChildren:()=>import('./layouts/admin-layout/chef/listechef/listechef.module').then(m=>m.ListechefModule)},
-    {path:'editchef', loadChildren:()=>import('./layouts/admin-layout/chef/editchef/editchef.module').then(m=>m.EditchefModule)},
-    {path:'addchef', loadChildren:()=>import('./layouts/admin-layout/chef/addchef/addchef.module').then(m=>m.AddchefModule)},
+    {path:'listechef', loadChildren:()=>import('./views/admin/chef/listechef/listechef.module').then(m=>m.ListechefModule)},
+    {path:'editchef', loadChildren:()=>import('./views/admin/chef/editchef/editchef.module').then(m=>m.EditchefModule)},
+    {path:'addchef', loadChildren:()=>import('./views/admin/chef/addchef/addchef.module').then(m=>m.AddchefModule)},
 
 
     
@@ -58,6 +58,7 @@ const routes: Routes = [
 
     {path:'monprofil', loadChildren:()=>import('./views/client/monprofil/monprofil/monprofil.module').then(m=>m.MonprofilModule)},
     {path:'editprofil', loadChildren:()=>import('./views/client/monprofil/editmonprofil/editmonprofil.module').then(m=>m.EditmonprofilModule)},
+    {path:'mescommandes', loadChildren:()=>import('./views/client/monprofil/mescommandes/mescommandes.module').then(m=>m.MescommandesModule)},
 
 
   ]}

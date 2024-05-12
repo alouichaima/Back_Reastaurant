@@ -9,10 +9,13 @@ import { StorageService } from './storage.service';
   providedIn: 'root'
 })
 export class MenuitemService {
+
   readonly API_URL = 'http://localhost:8021/api/menuitems'; // Corrected URL
   readonly API_CART = 'http://localhost:8021/cart'; 
   readonly API_CAT = 'http://localhost:8021/api/categories'; // Assuming category endpoint URL
   
+
+
   constructor(private httpClient: HttpClient) {}
 
   fetchItemList(): Observable<any> {
@@ -22,6 +25,7 @@ export class MenuitemService {
   getAllMenuItems(): Observable<any> {
     return this.httpClient.get(`${this.API_URL}/all-items`);
   }
+
   
   addToCart(menuItemId: any): Observable<any> {
     const cartDto = {
@@ -32,6 +36,9 @@ export class MenuitemService {
       headers: this.createAuthorizationHeader()
     });
   }
+
+
+
 
   addMenuItem(menuItem: MenuItem): Observable<MenuItem> {
     return this.httpClient.post<MenuItem>(`${this.API_URL}/additem`, menuItem);
@@ -54,12 +61,15 @@ export class MenuitemService {
   }
 
 
+
   private createAuthorizationHeader(): HttpHeaders {
     let authHeaders: HttpHeaders = new HttpHeaders();
     return authHeaders.set(
       "Authorization", "Bearer " + StorageService.getToken()
     );
   }
+
+
 
   getMenuItem(): Observable<any[]> {
     return this.httpClient.get(`${this.API_URL}/all-items`, { responseType: 'text' }).pipe(
@@ -71,6 +81,5 @@ export class MenuitemService {
       })
     );
   }
-  
 
 }

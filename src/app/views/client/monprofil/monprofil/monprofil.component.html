@@ -2,10 +2,34 @@
   <div class="panel-body inf-content">
       <div class="row">
           <div class="col-md-4">
-              <img
+              <!-- <img
         src="data:image/png;base64,{{ OneUser.photo }}"
         style="width:190px; margin-top: 0.5cm;"
-        alt="" />
+        alt="" /> -->
+        <div class="user-info">
+          <img  class="img-profile img-circle img-responsive center-block" src="data:image/png;base64,{{OneUser.photo}}"  data-holder-rendered="true" >
+         <form (ngSubmit)="updatephoto()"><br>
+          <div class="img" >
+            <div class="form-group">
+              <label for="exampleFormControlFile1">Photo</label>
+              <input type="file" class="form-control-file" id="exampleFormControlFile1"
+              name="path"
+              [required]="true"
+              #photo="ngModel" ngModel
+              (change)="selectImage($event)">
+            </div>
+          </div>
+          <!-- <button class="btn btn-info">update</button> -->
+          <button  class="btn btn-secondary">Edit</button>
+
+        </form>
+         <ul class="meta list list-unstyled">
+             <li></li>
+             <li class="name">
+                 <!-- <label class="label label-info">UX Designer</label> -->
+             </li>
+                      </ul>
+     </div>
               <ul title="Ratings" class="list-inline ratings text-center">
                   <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>
                   <li><a href="#"><span class="glyphicon glyphicon-star"></span></a></li>

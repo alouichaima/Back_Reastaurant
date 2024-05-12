@@ -2,6 +2,7 @@ import { ReservationService } from 'src/app/__services/reservation.service';
 import { Component } from '@angular/core';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatTableModule } from '@angular/material/table';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
@@ -13,6 +14,7 @@ import { MatTableModule } from '@angular/material/table';
   imports: [
     MatTableModule,
     MatProgressSpinnerModule,
+    CommonModule
 
 
   ],

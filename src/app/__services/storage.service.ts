@@ -25,8 +25,12 @@ export class StorageService {
     const token = localStorage.getItem(TOKEN_KEY);
     return token ? token : null;
   }
+
+  public getTokenn(): string |null {
+    return sessionStorage.getItem(TOKEN_KEY);
+  }
   signOut(): void {
-    localStorage.clear(); 
+    localStorage.clear();
   }
 
 
@@ -46,5 +50,23 @@ export class StorageService {
 
   isLoggedIn(): boolean {
     return !!localStorage.getItem(USER_KEY);
+  }
+  getToken(): string | null {
+    return localStorage.getItem(TOKEN_KEY);
+  }
+  isTokenExpired(): boolean {
+    const token = this.getToken();
+    if (!token) {
+      return true;
+    }
+    const decodedToken: any = this.decodeToken(token);
+    const currentTime = new Date().getTime() / 1000; // Convert to seconds
+    return decodedToken.exp < currentTime;
+  }
+
+  private decodeToken(token: string): any {
+    const payload = token.split('.')[1];
+    const decodedPayload = atob(payload);
+    return JSON.parse(decodedPayload);
   }
 }

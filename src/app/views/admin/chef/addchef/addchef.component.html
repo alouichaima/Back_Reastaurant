@@ -1,0 +1,32 @@
+<h2>Add Chef</h2>
+
+<form [formGroup]="chefForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="nomPrenom">Full Name:</label>
+    <input type="text" id="nomPrenom" formControlName="nomPrenom" required>
+  </div>
+  <div>
+    <label for="description">Description:</label>
+    <textarea id="description" formControlName="description"></textarea>
+  </div>
+  <div>
+    <label for="image">Image:</label>
+    <textarea id="image" formControlName="image"></textarea>
+  </div>
+
+  <div>
+    <label for="facebook">Facebook:</label>
+    <textarea id="facebook" formControlName="facebook"></textarea>
+  </div>
+  <div>
+    <label for="instagram">Instagram:</label>
+    <textarea id="instagram" formControlName="instagram"></textarea>
+  </div>
+
+  <div>
+    <button type="submit" mat-raised-button color="primary">Add</button>
+
+  </div>
+</form>
+
+

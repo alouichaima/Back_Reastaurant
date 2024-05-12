@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -12,7 +14,13 @@ import { HomeRoutingModule } from './home-routing.module';
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    MatSnackBarModule,
+    MatIconModule
+  ],
+  providers: [
+    // Autres services
+    MatSnackBar, // Ajoutez MatSnackBar aux fournisseurs (providers)
   ]
 })
 export class HomeModule { }

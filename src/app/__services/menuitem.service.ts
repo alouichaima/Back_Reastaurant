@@ -10,9 +10,9 @@ import { StorageService } from './storage.service';
 })
 export class MenuitemService {
 
-  readonly API_URL = 'http://localhost:8021/api/menuitems'; // Corrected URL
-  readonly API_CART = 'http://localhost:8021/cart'; 
-  readonly API_CAT = 'http://localhost:8021/api/categories'; // Assuming category endpoint URL
+  readonly API_URL = 'http://localhost:9000/api/menuitems'; // Corrected URL
+  readonly API_CART = 'http://localhost:9000/cart'; 
+  readonly API_CAT = 'http://localhost:9000/api/categories'; // Assuming category endpoint URL
   
 
 

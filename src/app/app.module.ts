@@ -25,6 +25,7 @@ import { MenuItemComponent } from './layouts/admin-layout/menu-item/menu-item.co
 import { FoodmenuComponent } from './layouts/admin-layout/foodmenu/foodmenu.component';
 import { MenuListComponent } from './views/interface/menu-list/menu-list.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { CommandeComponent } from './views/admin/commande/commande.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MenuItemComponent,
     FoodmenuComponent,
     MenuListComponent,
+    
     
     
   ],

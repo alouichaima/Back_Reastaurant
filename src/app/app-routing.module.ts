@@ -31,7 +31,9 @@ const routes: Routes = [
     {path:'addCategory',component:AddCategoryComponent},
     {path: 'update-categorie/:id', component: UpdateCategoryComponent },
     {path:'reservation',loadChildren:()=>import('./views/admin/reservation/get-reservation/get-reservation.module').then(m=>m.GetReservationModule)},
+    {path:'commande',loadChildren:()=>import('./views/admin/commande/commande.module').then(m=>m.CommandeModule)},
     {path:'menu-item',component:MenuItemComponent},
+
     {path:'addItem',component:AddMenuItemComponent},
     {path:'update-item/:id',component:UpdateItemComponent},
     {path:'categories',component:CategoryComponent},

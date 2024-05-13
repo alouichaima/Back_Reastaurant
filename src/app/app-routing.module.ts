@@ -41,21 +41,20 @@ const routes: Routes = [
     {path:'addchef', loadChildren:()=>import('./views/admin/chef/addchef/addchef.module').then(m=>m.AddchefModule)},
 
 
-    
+
 
   ]},
 
-  
+
   {path:'client',component:ProfilLayoutsComponent,children:[
   {path:'reservation',loadChildren:()=>import('./views/client/post-reservation/post-reservation.module').then(m=>m.PostReservationModule)},
-
     {path:'reservation',loadChildren:()=>import('./views/client/post-reservation/post-reservation.module').then(m=>m.PostReservationModule)},
     {path:'reservationall',loadChildren:()=>import('./views/client/getall-reservation/getall-reservation.module').then(m=>m.GetallReservationModule)},
     {path:'reservation',loadChildren:()=>import('./views/client/post-reservation/post-reservation.module').then(m=>m.PostReservationModule)},
-
-
     {path:'monprofil', loadChildren:()=>import('./views/client/monprofil/monprofil/monprofil.module').then(m=>m.MonprofilModule)},
     {path:'editprofil', loadChildren:()=>import('./views/client/monprofil/editmonprofil/editmonprofil.module').then(m=>m.EditmonprofilModule)},
+    {path:'getwishlist', loadChildren:()=>import('./views/client/getwishlist/getwishlist.module').then(m=>m.GetwishlistModule)},
+
 
 
   ]}

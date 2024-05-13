@@ -40,7 +40,6 @@ export class HomeComponent {
   isNotLoggedIn =false;
   showAdminBoard = false;
   showClientBoard = false;
-  showvisiteurBoard = true;
   showAddMenuItemForm: boolean = false;
 
   constructor(
@@ -64,21 +63,23 @@ export class HomeComponent {
       instagram:null
 
     }
-
-    this.isLoggedIn = !!this.tokenStorageService.getTokenn();
-    if (this.isLoggedIn) {
-      const user = this.tokenStorageService.getUser();
-      this.roles = user.roles;
-      this.showAdminBoard = this.roles.includes('ADMIN');
-      this.showClientBoard = this.roles.includes('CLIENT');
-      this.showvisiteurBoard = this.roles.includes('visiteur')
+    const user = this.tokenStorageService.getUser();
+    if (user && user.roles.includes('CLIENT')) {
+      this.showClientBoard = true;
     }
+
+    // this.isLoggedIn = !!this.tokenStorageService.getTokenn();
+    // if (this.isLoggedIn) {
+    //   const user = this.tokenStorageService.getUser();
+    //   this.roles = user.roles;
+    //   this.showAdminBoard = this.roles.includes('ADMIN');
+    //   this.showClientBoard = this.roles.includes('CLIENT');
+    // }
 
     this.isNotLoggedIn  = !!this.tokenStorageService.getTokenn();
 
     if (this.isLoggedIn) {
       const user = this.tokenStorageService.getUser();
-      this.showvisiteurBoard = this.roles.includes('visiteur')
 
     }
 

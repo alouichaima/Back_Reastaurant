@@ -1,0 +1,16 @@
+<div *ngIf="wishlists.length > 0" class="wishlist-container">
+  <h2 class="wishlist-title">WISHLIST</h2>
+  <ul>
+    <li *ngFor="let wishlist of wishlists" class="wishlist-item">
+      <div>
+        <p class="wishlist-name">Name : {{ wishlist.name }}</p>
+        <p class="wishlist-description">Description : {{ wishlist.description }}</p>
+        <p class="wishlist-price">Price : {{ wishlist.price }} DT</p>
+      </div>
+      <hr class="wishlist-divider"> <!-- Ligne horizontale pour séparer chaque élément de la liste -->
+    </li>
+  </ul>
+</div>
+<div *ngIf="wishlists.length === 0">
+  <p>Aucun élément dans la liste de souhaits.</p>
+</div>

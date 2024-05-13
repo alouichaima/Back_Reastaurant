@@ -5,8 +5,7 @@
                 <div class="banner-text">
                     <div class="banner-cell">
                         <h1>Dinner with us  <span class="typer" id="some-id" data-delay="200" data-delim=":" data-words="Friends:Family:Officemates" data-colors="red"></span><span class="cursor" data-cursorDisplay="_" data-owner="some-id"></span></h1>
-                        <h2>Accidental appearances </h2>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diem nonummy nibh euismod</p>
+                        <h2>"Delight in Every Bite, Explore Flavorful Delights!"               </h2>
                         <div class="book-btn">
                             <a href="/login" class="table-btn hvr-underline-from-center">Login</a>
                         </div>
@@ -33,11 +32,6 @@
                 <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
                     <h2 class="block-title"> About Us </h2>
                     <h3>IT STARTED, QUITE SIMPLY, LIKE THIS...</h3>
-                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia, nostrud exercitation ullamco. </p>
-
-                    <p> Aenean commodo ligula eget dolor aenean massa. Cum sociis nat penatibu set magnis dis parturient montes, nascetur ridiculus mus. quam felisorat, ultricies nec, Aenean commodo ligula eget dolor penatibu set magnis is parturient montes, nascetur ridiculus mus. quam felisorat, ultricies nec, pellentesque eu, pretium quis, sem. quat massa quis enim. Donec vitae sapien ut libero venenatis fauci Nullam quis ante. Etiam sit amet rci eget eros. </p>
-
-                    <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia, nostrud exercitation ullamco. </p>
                 </div>
             </div>
             <!-- end col -->
@@ -62,7 +56,6 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
                     <h2 class="block-title color-white text-center"> Today's Special </h2>
-                    <h5 class="title-caption text-center"> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusm incididunt ut labore et dolore magna aliqua. Ut enim ad minim venia,nostrud exercitation ullamco. </h5>
                 </div>
                 <div class="special-box">
                     <div id="owl-demo">
@@ -175,14 +168,14 @@
                                             {{item.description}}
                                         </p>
                                     </div>
-                                    <span class="offer-price">{{item.price}}</span>
+                                    <span class="offer-price">{{item.price}} DT</span>
 
 
                                 </div>
-                                <mat-icon class="heart-icon" (click)="addtowishList(item.id)" style="cursor: pointer; margin-top: 10px;">
+                                <mat-icon class="heart-icon" *ngIf="showClientBoard" (click)="addtowishList(item.id)" style="cursor: pointer; margin-top: 10px;">
                                   favorite_border
-                              </mat-icon><br>
-                                <a class ="passer"   (click)="passercommande(item.id)" > Acheter</a> <br><br>
+                                </mat-icon><br>
+                                <a class="buy-button" *ngIf="showClientBoard" (click)="passercommande(item.id)"> Buy</a><br>
                                 <!-- <a class="passer" *ngIf="showvisiteurBoard"  routerLink="/registre" >Créer un compte</a> -->
                             </div>
                         </div>

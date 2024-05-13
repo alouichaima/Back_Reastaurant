@@ -1,0 +1,45 @@
+/* Styles pour la liste de souhaits */
+.wishlist-container {
+  text-align: center; /* Centrer le contenu horizontalement */
+}
+
+.wishlist-item {
+  display: inline-block;
+  text-align: left; /* Aligner le contenu du wishlist-item à gauche */
+  margin: 20px; /* Ajouter un espace autour de chaque élément */
+  padding: 10px; /* Ajouter un espace à l'intérieur de chaque élément */
+  border: 1px solid #ccc; /* Ajouter une bordure autour de chaque élément */
+  border-radius: 5px; /* Ajouter des coins arrondis à la bordure */
+}
+
+.wishlist-name {
+  font-size: 20px; /* Modifier la taille de la police du nom */
+  color: #333; /* Changer la couleur du texte */
+}
+
+.wishlist-description {
+  font-size: 16px;
+  color: #e5bbbb;
+  white-space: normal;
+  word-wrap: break-word;
+  max-width: 250px; /* Définissez la largeur maximale que vous souhaitez pour le cadre de description */
+}
+
+
+
+.wishlist-price {
+  font-size: 18px; /* Modifier la taille de la police du prix */
+  color: #009688; /* Changer la couleur du texte en vert */
+}
+
+.wishlist-divider {
+  border-top: 1px dashed #ccc; /* Ajouter une ligne pointillée pour séparer les éléments */
+  margin-top: 20px; /* Ajouter un espace au-dessus de la ligne */
+  margin-bottom: 20px; /* Ajouter un espace en dessous de la ligne */
+}
+.wishlist-title {
+  font-size: 24px; /* Modifier la taille de la police */
+  color: #009688; /* Changer la couleur du texte en vert */
+  text-align: center; /* Centrer le texte horizontalement */
+  margin-bottom: 20px; /* Ajouter un espace en dessous du titre */
+}

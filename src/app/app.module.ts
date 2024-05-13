@@ -23,6 +23,7 @@ import { AddMenuItemComponent } from './layouts/admin-layout/menu-item/add-item/
 import { UpdateItemComponent } from './layouts/admin-layout/menu-item/update-item/update-item.component';
 import { MenuItemComponent } from './layouts/admin-layout/menu-item/menu-item.component';
 import { FoodmenuComponent } from './layouts/admin-layout/foodmenu/foodmenu.component';
+import { GetwishlistComponent } from './views/client/getwishlist/getwishlist.component';
 
 @NgModule({
   declarations: [
@@ -37,8 +38,8 @@ import { FoodmenuComponent } from './layouts/admin-layout/foodmenu/foodmenu.comp
     UpdateItemComponent,
     MenuItemComponent,
     FoodmenuComponent,
-    
-    
+
+
   ],
   imports: [
     BrowserModule,

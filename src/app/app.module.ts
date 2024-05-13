@@ -25,6 +25,10 @@ import { MenuItemComponent } from './layouts/admin-layout/menu-item/menu-item.co
 import { FoodmenuComponent } from './layouts/admin-layout/foodmenu/foodmenu.component';
 import { GetwishlistComponent } from './views/client/getwishlist/getwishlist.component';
 
+import { MenuListComponent } from './views/interface/menu-list/menu-list.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { CommandeComponent } from './views/admin/commande/commande.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +42,8 @@ import { GetwishlistComponent } from './views/client/getwishlist/getwishlist.com
     UpdateItemComponent,
     MenuItemComponent,
     FoodmenuComponent,
+    MenuListComponent
+
 
 
   ],
@@ -52,6 +58,7 @@ import { GetwishlistComponent } from './views/client/getwishlist/getwishlist.com
     MatPaginatorModule,
     FormsModule,
     NgbModule,
+    MatSnackBarModule
 
 
   ],

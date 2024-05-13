@@ -1,5 +1,5 @@
 <div >
-  <h2 style="margin-left: 140px;">Reservation </h2>
+  <h2 style="margin-left: 140px; color: #a7743a;">Reservation </h2>
 </div>
 <form [formGroup]="validateForm">
   <mat-form-field>
@@ -31,5 +31,5 @@
   <td mat-cell *matCellDef="let reservation">{{ reservation.dateTime | date: 'HH:mm' }}</td>
 
 
-  <button mat-stroked-button color="warn" (click)="postReservation()">Submit</button>
+  <button mat-stroked-button color="warn" (click)="postReservation()" style="color: #a7743a;">Submit</button>
 </form>

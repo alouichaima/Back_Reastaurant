@@ -11,7 +11,7 @@ export class WishlistService {
   constructor(private http: HttpClient) { }
 
   getUserWishlist(userId: number): Observable<WishlistDto[]> {
-    return this.http.get<WishlistDto[]>(`http://localhost:8022/api/wishlist/meswishlist/${userId}`);
+    return this.http.get<WishlistDto[]>(`http://localhost:9000/api/wishlist/meswishlist/${userId}`);
   }
 
 }

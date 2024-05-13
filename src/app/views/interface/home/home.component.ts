@@ -54,33 +54,6 @@ export class HomeComponent {
   ngOnInit(): void {
     this.getAllMenuItems();
     this.getAllChef();
-    this.chef={
-      id:null,
-      nomPrenom:null,
-      description:null,
-      image : null,
-      facebook:null,
-      instagram:null
-
-  }
-    const user = this.tokenStorageService.getUser();
-    if (user && user.roles.includes('CLIENT')) {
-      this.showClientBoard = true;
-    }
-
-    // this.isLoggedIn = !!this.tokenStorageService.getTokenn();
-    // if (this.isLoggedIn) {
-    //   const user = this.tokenStorageService.getUser();
-    //   this.roles = user.roles;
-    //   this.showAdminBoard = this.roles.includes('ADMIN');
-    //   this.showClientBoard = this.roles.includes('CLIENT');
-    // }
-
-    this.isNotLoggedIn  = !!this.tokenStorageService.getTokenn();
-
-    if (this.isLoggedIn) {
-      const user = this.tokenStorageService.getUser();
-
     this.chef = {
       id: null,
       nomPrenom: null,
@@ -89,7 +62,6 @@ export class HomeComponent {
       facebook: null,
       instagram: null
     };
-
 
     this.isLoggedIn = !!this.tokenStorageService.getTokenn();
     if (this.isLoggedIn) {
@@ -110,10 +82,10 @@ export class HomeComponent {
     this.iduser = this.user.id;
     console.log(this.iduser);
   }
+
   getAllChef() {
     this.servicechef.getAllChef().subscribe(res => this.listChef = res);
   }
-
 
   getAllCategories() {
     this.categoryService.getCategories().subscribe(res => this.listCategories = res);
@@ -143,6 +115,7 @@ export class HomeComponent {
       }
     );
   }
+
 
 
   addtowishList(id: any) {

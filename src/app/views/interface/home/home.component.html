@@ -31,7 +31,7 @@
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                 <div class="wow fadeIn" data-wow-duration="1s" data-wow-delay="0.1s">
                     <h2 class="block-title"> About Us </h2>
-                    <h3>IT STARTED, QUITE SIMPLY, LIKE THIS...</h3>
+                    <h3>At ACO FOOD, we're passionate about bringing people together through the joy of food. Whether you're a culinary enthusiast, a seasoned chef, or someone simply looking to explore new tastes, we're here to inspire and delight you on your gastronomic journey.</h3>
                 </div>
             </div>
             <!-- end col -->
@@ -171,10 +171,11 @@
                                     <span class="offer-price">{{item.price}} DT</span>
 
                                 </div>
-                                <mat-icon class="heart-icon" *ngIf="showClientBoard" (click)="addtowishList(item.id)" style="cursor: pointer; margin-top: 10px;">
-                                  favorite_border
+                                <mat-icon class="heart-icon" (click)="addtowishList(item.id)" style="cursor: pointer; margin-top: 10px;">
+                                    favorite_border
                                 </mat-icon><br>
-                                <a class="buy-button" *ngIf="showClientBoard" (click)="passercommande(item.id)"> Buy</a><br>
+  
+                               <mat-icon><a class="buy-button" *ngIf="showClientBoard" (click)="passerCommande(item.id)"> Buy</a><br>
                               </mat-icon><br>
                                 <a class ="passer"   (click)="passerCommande(item.id)" > Acheter</a> <br><br>
                                 <!-- <a class="passer" *ngIf="showvisiteurBoard"  routerLink="/registre" >Créer un compte</a> -->

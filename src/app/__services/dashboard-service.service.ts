@@ -32,12 +32,12 @@ export class DashboardServiceService {
     );
   }
   CountDISAPPROVEReservations() {
-    return this.http.get('http://localhost:8022/api/CountDISAPPROVEReservations');
+    return this.http.get('http://localhost:9000/api/CountDISAPPROVEReservations');
   }
   CountAPPROVEDReservations() {
-    return this.http.get('http://localhost:8022/api/CountAPPROVEDReservations');
+    return this.http.get('http://localhost:9000/api/CountAPPROVEDReservations');
   }
   CountPendingReservations() {
-    return this.http.get('http://localhost:8022/api/CountPendingReservations');
+    return this.http.get('http://localhost:9000/api/CountPendingReservations');
   }
   }

@@ -6,7 +6,6 @@ import { CategoryComponent } from './layouts/admin-layout/category/category.comp
 import { AddCategoryComponent } from './layouts/admin-layout/category/add-category/add-category.component';
 import { UpdateCategoryComponent } from './layouts/admin-layout/category/update-category/update-category.component';
 import { ProfilLayoutsComponent } from './layouts/profil-layouts/profil-layouts.component';
-import { MenuItem } from './models/menu-item';
 import { MenuItemComponent } from './layouts/admin-layout/menu-item/menu-item.component';
 import { UpdateItemComponent } from './layouts/admin-layout/menu-item/update-item/update-item.component';
 import { AddMenuItemComponent } from './layouts/admin-layout/menu-item/add-item/add-item.component';
@@ -14,7 +13,7 @@ import { FoodmenuComponent } from './layouts/admin-layout/foodmenu/foodmenu.comp
 
 const routes: Routes = [
   {path:'',component:TemplateLayoutComponent,children:[
-    {path:'',loadChildren:()=>import('./views/interface/home/home.module').then(m=>m.HomeModule)},
+  {path:'',loadChildren:()=>import('./views/interface/home/home.module').then(m=>m.HomeModule)},
     {path:'categorieC',loadChildren:()=>import('./views/interface/get_categorie/getcategorie/getcategorie.module').then(m=>m.GetcategorieModule)},
   ]},
   {path:'login',loadChildren:()=>import('./views/interface/login/login.module').then(m=>m.LoginModule)},
@@ -54,8 +53,7 @@ const routes: Routes = [
     {path:'monprofil', loadChildren:()=>import('./views/client/monprofil/monprofil/monprofil.module').then(m=>m.MonprofilModule)},
     {path:'editprofil', loadChildren:()=>import('./views/client/monprofil/editmonprofil/editmonprofil.module').then(m=>m.EditmonprofilModule)},
     {path:'getwishlist', loadChildren:()=>import('./views/client/getwishlist/getwishlist.module').then(m=>m.GetwishlistModule)},
-
-
+    {path:'mescommandes', loadChildren:()=>import('./views/client/monprofil/mescommandes/mescommandes.module').then(m=>m.MescommandesModule)},
 
   ]}
 

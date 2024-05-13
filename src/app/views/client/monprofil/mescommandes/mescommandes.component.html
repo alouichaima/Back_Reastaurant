@@ -1,0 +1,25 @@
+<div class="row">
+  <h1 class="title">Mes Commandes</h1>
+  <div class="commandes-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Menu Item</th>
+          <th>Date de commande</th>
+          <th>Description</th>
+          <th>Prix</th>
+          <th>Statut</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of menuItem">
+          <td>{{ item.menuItem.name }}</td>
+          <td>{{ item.datedecommande }}</td>
+          <td>{{ item.menuItem.description }}</td>
+          <td>{{ item.menuItem.price }}</td>
+          <td>{{ item.commandeStatus }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

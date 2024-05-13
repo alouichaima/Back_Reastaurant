@@ -23,6 +23,9 @@ import { AddMenuItemComponent } from './layouts/admin-layout/menu-item/add-item/
 import { UpdateItemComponent } from './layouts/admin-layout/menu-item/update-item/update-item.component';
 import { MenuItemComponent } from './layouts/admin-layout/menu-item/menu-item.component';
 import { FoodmenuComponent } from './layouts/admin-layout/foodmenu/foodmenu.component';
+import { MenuListComponent } from './views/interface/menu-list/menu-list.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { CommandeComponent } from './views/admin/commande/commande.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,8 @@ import { FoodmenuComponent } from './layouts/admin-layout/foodmenu/foodmenu.comp
     UpdateItemComponent,
     MenuItemComponent,
     FoodmenuComponent,
+    MenuListComponent,
+    
     
     
   ],
@@ -51,6 +56,7 @@ import { FoodmenuComponent } from './layouts/admin-layout/foodmenu/foodmenu.comp
     MatPaginatorModule,
     FormsModule,
     NgbModule,
+    MatSnackBarModule,
 
 
   ],

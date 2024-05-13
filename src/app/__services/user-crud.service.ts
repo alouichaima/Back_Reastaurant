@@ -5,12 +5,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserCRUDService {
-  private baseUrl = 'http://localhost:8022/api/utilisateur/';
+  private baseUrl = 'http://localhost:9000/api/utilisateur/';
 
 
   constructor(private http: HttpClient) {}
   GetOneUser(id:any){
-    return this.http.get('http://localhost:8022/api/utilisateur/GetOneUser/'+id)
+    return this.http.get('http://localhost:9000/api/utilisateur/GetOneUser/'+id)
    }
 
   updateprofil(id: any, us: any) {
@@ -20,7 +20,7 @@ export class UserCRUDService {
 
   ModifierPhoto(iduser: any, file: any) {
     return this.http.put(
-      'http://localhost:8022/api/utilisateur/ModifierPhoto/' + iduser,
+      'http://localhost:9000/api/utilisateur/ModifierPhoto/' + iduser,
       file
     );
   }

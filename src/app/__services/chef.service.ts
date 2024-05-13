@@ -8,7 +8,7 @@ import { Chef } from '../models/chef';
 })
 export class ChefService {
 
-  private baseUrl = 'http://localhost:8022/chef';
+  private baseUrl = 'http://localhost:9000/chef';
   constructor(private httpClient:HttpClient) { }
 
   getAllChef(){
@@ -32,6 +32,12 @@ getChef(): Observable<Chef[]> {
   return this.httpClient.get<Chef[]>(this.baseUrl);
 }
 
+ModifierPhoto(idchef: any, file: any) {
+  return this.httpClient.put(
+    'http://localhost:9000/chef/ModifierPhoto/' + idchef,
+    file
+  );
+}
 
 
 }

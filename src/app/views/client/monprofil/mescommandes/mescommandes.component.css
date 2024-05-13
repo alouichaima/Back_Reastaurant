@@ -1,0 +1,42 @@
+/* Styles pour le tableau */
+
+.commandes-table {
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .commandes-table table {
+    width: 175%;
+    border-collapse: collapse;
+  }
+  
+  .commandes-table th, .commandes-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .commandes-table th {
+    background-color: #f2f2f2;
+    color: #a7743a;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .commandes-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .commandes-table tbody tr:hover {
+    background-color: #a7743a;
+  }
+  
+  /* Style pour le titre */
+  .title {
+    font-size: 1cm;
+    color: #a7743a;
+    font-family: 'Anton', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    margin-left: 290px;
+    
+  }
+  

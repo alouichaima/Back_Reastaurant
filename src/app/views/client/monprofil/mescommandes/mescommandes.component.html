@@ -1,21 +1,25 @@
 <div class="row">
-  <h1 style="font-size: 1cm; color: #8d7a55; font-family: 'Anton', sans-serif; text-align: center;">Mes Commandes</h1>
-  <div class="row row-cols-1 row-cols-md-3 g-4">
-    <div class="single-trainer-item" *ngFor="let item of menuItem">
-      <div class="col-lg-4 col-sm-4 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
-        <div style="text-align:center;" class="single-pricing">
-          <div class="price-head">
-            <h2 style="color: #8d7a55; font-size: 20px;">{{ item.menuItem.nom }}</h2>
-          </div>
-          <p style="color: black;">Date de commande :</p>
-          <p style="color: black; text-align: center;">{{ item.datedecommande }}</p>
-          <p style="color: black;">Description :</p>
-          <p style="color: black; text-align: center;">{{ item.menuItem.description }}</p>
-          <p style="color: black;">Prix :</p>
-          <p style="color: black; text-align: center;">{{ item.menuItem.price }}</p>
-          <p style="color: black; text-align: center;">{{ item.commandeStatus }}</p>
-        </div>
-      </div>
-    </div>
+  <h1 class="title">Mes Commandes</h1>
+  <div class="commandes-table">
+    <table>
+      <thead>
+        <tr>
+          <th>Menu Item</th>
+          <th>Date de commande</th>
+          <th>Description</th>
+          <th>Prix</th>
+          <th>Statut</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of menuItem">
+          <td>{{ item.menuItem.name }}</td>
+          <td>{{ item.datedecommande }}</td>
+          <td>{{ item.menuItem.description }}</td>
+          <td>{{ item.menuItem.price }}</td>
+          <td>{{ item.commandeStatus }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>
